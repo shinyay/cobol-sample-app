@@ -134,6 +134,18 @@ SORT-EMPLOYEES.
 - Copies data from `EMPLOYEE-TABLE` to `SORTED-EMPLOYEE-TABLE`.
 - Uses a bubble sort algorithm to sort employees by ID.
 
+#### CALCULATE-NET-SALARIES
+Calculates the net salaries for each employee.
+
+```cobol
+CALCULATE-NET-SALARIES.
+    PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+        COMPUTE SORT-BONUS(EMPLOYEE-INDEX) = SORT-GROSS-SALARY(EMPLOYEE-INDEX) * BONUS-RATE
+        ...
+    END-PERFORM.
+```
+- Computes bonus, deductions, tax deduction, and net salary for each employee.
+
 
 ## Demo
 
