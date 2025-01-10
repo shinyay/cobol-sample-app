@@ -59,6 +59,18 @@ A table to store sorted employee details.
 ```
 - Similar to `EMPLOYEE-TABLE`, but used for storing sorted employee details.
 
+#### DEPARTMENT-TOTALS
+A table to store total salaries by department.
+
+```cobol
+01  DEPARTMENT-TOTALS.
+    05  DEPARTMENT-TOTAL OCCURS 5 TIMES.
+        10  DEPT-NAME          PIC X(10).
+        10  TOTAL-SALARY       PIC 9(7)V99.
+```
+- `DEPARTMENT-TOTAL OCCURS 5 TIMES`: Defines an array with 5 entries for department totals.
+- Each entry contains fields for department name and total salary.
+
 
 ## Demo
 
