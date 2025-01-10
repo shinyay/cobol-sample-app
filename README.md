@@ -174,6 +174,22 @@ DISPLAY-EMPLOYEES.
 ```
 - Displays each employee's details.
 
+#### DISPLAY-DEPARTMENT-TOTALS
+Displays the total salaries for each department.
+
+```cobol
+DISPLAY-DEPARTMENT-TOTALS.
+    DISPLAY "Department Salary Totals".
+    ...
+    PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+        IF DEPT-NAME(DEPARTMENT-INDEX) NOT = SPACES
+            DISPLAY "Department: " DEPT-NAME(DEPARTMENT-INDEX)
+            ...
+    END-PERFORM.
+```
+- Displays each department's total salary.
+
+This COBOL program is a simple payroll system that initializes employee data, sorts it, calculates net salaries, aggregates department totals, and displays the results.
 
 ## Demo
 
