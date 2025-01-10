@@ -107,6 +107,19 @@ MAIN-PROCEDURE.
 ```
 - Calls various procedures to initialize, sort, calculate, and display data.
 
+#### INITIALIZE-EMPLOYEES
+Initializes the employee table with sample data.
+
+```cobol
+INITIALIZE-EMPLOYEES.
+    MOVE "E001" TO EMPLOYEE-ID(1).
+    MOVE "Alice Johnson" TO EMPLOYEE-NAME(1).
+    MOVE "HR" TO DEPARTMENT(1).
+    MOVE 70000.00 TO GROSS-SALARY(1).
+    ...
+```
+- Moves sample data into the `EMPLOYEE-TABLE`.
+
 
 ## Demo
 
