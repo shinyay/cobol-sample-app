@@ -71,6 +71,23 @@ A table to store total salaries by department.
 - `DEPARTMENT-TOTAL OCCURS 5 TIMES`: Defines an array with 5 entries for department totals.
 - Each entry contains fields for department name and total salary.
 
+#### Other Variables
+Additional variables used in the program.
+
+```cobol
+01  EMPLOYEE-INDEX           PIC 9(3).
+01  INNER-INDEX              PIC 9(3).
+01  TAX-RATE                 PIC 9V99 VALUE 0.20.
+01  BONUS-RATE               PIC 9V99 VALUE 0.10.
+01  DEDUCTION-RATE           PIC 9V99 VALUE 0.05.
+01  DEPARTMENT-INDEX         PIC 9(3).
+01  TEMP-ID                  PIC X(5).
+01  TEMP-NAME                PIC X(20).
+01  TEMP-DEPARTMENT          PIC X(10).
+01  TEMP-SALARY              PIC 9(7)V99.
+```
+- These variables are used for indexing, storing rates, and temporary storage during sorting.
+
 
 ## Demo
 
