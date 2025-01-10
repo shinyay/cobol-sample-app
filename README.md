@@ -15,6 +15,15 @@ PROGRAM-ID. PayrollSystem.
 ### DATA DIVISION
 This section defines the data structures and variables used in the program.
 
+#### WORKING-STORAGE SECTION
+This section declares variables and tables.
+
+```cobol
+WORKING-STORAGE SECTION.
+01  MAX-EMPLOYEES           PIC 9(3) VALUE 5.
+```
+- `MAX-EMPLOYEES`: A numeric variable that holds the maximum number of employees, set to 5.
+
 
 ## Demo
 
