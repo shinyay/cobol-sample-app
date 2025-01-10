@@ -2,6 +2,9 @@
 
 ## Description
 
+This COBOL program is a simple payroll system.
+
+
 ## Demo
 
 ## Features
