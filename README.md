@@ -88,6 +88,9 @@ Additional variables used in the program.
 ```
 - These variables are used for indexing, storing rates, and temporary storage during sorting.
 
+### PROCEDURE DIVISION
+This section contains the executable code.
+
 
 ## Demo
 
