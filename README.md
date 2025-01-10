@@ -4,6 +4,14 @@
 
 This COBOL program is a simple payroll system.
 
+### IDENTIFICATION DIVISION
+This section identifies the program.
+
+```cobol
+IDENTIFICATION DIVISION.
+PROGRAM-ID. PayrollSystem.
+```
+
 
 ## Demo
 
