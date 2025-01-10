@@ -24,6 +24,24 @@ WORKING-STORAGE SECTION.
 ```
 - `MAX-EMPLOYEES`: A numeric variable that holds the maximum number of employees, set to 5.
 
+#### EMPLOYEE-TABLE
+A table to store employee details.
+
+```cobol
+01  EMPLOYEE-TABLE.
+    05  EMPLOYEE-ENTRY OCCURS 5 TIMES.
+        10  EMPLOYEE-ID        PIC X(5).
+        10  EMPLOYEE-NAME      PIC X(20).
+        10  DEPARTMENT         PIC X(10).
+        10  GROSS-SALARY       PIC 9(7)V99.
+        10  BONUS              PIC 9(5)V99.
+        10  DEDUCTIONS         PIC 9(5)V99.
+        10  NET-SALARY         PIC 9(7)V99.
+        10  TAX-DEDUCTION      PIC 9(5)V99.
+```
+- `EMPLOYEE-ENTRY OCCURS 5 TIMES`: Defines an array with 5 entries for employee details.
+- Each entry contains fields for ID, name, department, gross salary, bonus, deductions, net salary, and tax deduction.
+
 
 ## Demo
 
