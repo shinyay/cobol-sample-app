@@ -120,6 +120,20 @@ INITIALIZE-EMPLOYEES.
 ```
 - Moves sample data into the `EMPLOYEE-TABLE`.
 
+#### SORT-EMPLOYEES
+Sorts the employees by their IDs.
+
+```cobol
+SORT-EMPLOYEES.
+    PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+        MOVE EMPLOYEE-ID(EMPLOYEE-INDEX) TO SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
+        ...
+    END-PERFORM.
+    ...
+```
+- Copies data from `EMPLOYEE-TABLE` to `SORTED-EMPLOYEE-TABLE`.
+- Uses a bubble sort algorithm to sort employees by ID.
+
 
 ## Demo
 
