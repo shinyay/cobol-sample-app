@@ -146,6 +146,34 @@ CALCULATE-NET-SALARIES.
 ```
 - Computes bonus, deductions, tax deduction, and net salary for each employee.
 
+#### CALCULATE-DEPARTMENT-TOTALS
+Calculates the total salaries for each department.
+
+```cobol
+CALCULATE-DEPARTMENT-TOTALS.
+    PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+        MOVE SPACES TO DEPT-NAME(DEPARTMENT-INDEX)
+        ...
+    END-PERFORM.
+    ...
+```
+- Initializes department totals.
+- Aggregates net salaries by department.
+
+#### DISPLAY-EMPLOYEES
+Displays the sorted employee details.
+
+```cobol
+DISPLAY-EMPLOYEES.
+    DISPLAY "Employee Payroll Information".
+    ...
+    PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+        DISPLAY "Employee ID: " SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
+        ...
+    END-PERFORM.
+```
+- Displays each employee's details.
+
 
 ## Demo
 
