@@ -91,6 +91,22 @@ Additional variables used in the program.
 ### PROCEDURE DIVISION
 This section contains the executable code.
 
+#### MAIN-PROCEDURE
+The main procedure that orchestrates the execution of other procedures.
+
+```cobol
+PROCEDURE DIVISION.
+MAIN-PROCEDURE.
+    PERFORM INITIALIZE-EMPLOYEES.
+    PERFORM SORT-EMPLOYEES.
+    PERFORM CALCULATE-NET-SALARIES.
+    PERFORM CALCULATE-DEPARTMENT-TOTALS.
+    PERFORM DISPLAY-EMPLOYEES.
+    PERFORM DISPLAY-DEPARTMENT-TOTALS.
+    STOP RUN.
+```
+- Calls various procedures to initialize, sort, calculate, and display data.
+
 
 ## Demo
 
