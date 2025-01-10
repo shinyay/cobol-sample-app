@@ -42,6 +42,23 @@ A table to store employee details.
 - `EMPLOYEE-ENTRY OCCURS 5 TIMES`: Defines an array with 5 entries for employee details.
 - Each entry contains fields for ID, name, department, gross salary, bonus, deductions, net salary, and tax deduction.
 
+#### SORTED-EMPLOYEE-TABLE
+A table to store sorted employee details.
+
+```cobol
+01  SORTED-EMPLOYEE-TABLE.
+    05  SORTED-EMPLOYEE-ENTRY OCCURS 5 TIMES.
+        10  SORT-EMPLOYEE-ID   PIC X(5).
+        10  SORT-EMPLOYEE-NAME PIC X(20).
+        10  SORT-DEPARTMENT    PIC X(10).
+        10  SORT-GROSS-SALARY  PIC 9(7)V99.
+        10  SORT-BONUS         PIC 9(5)V99.
+        10  SORT-DEDUCTIONS    PIC 9(5)V99.
+        10  SORT-NET-SALARY    PIC 9(7)V99.
+        10  SORT-TAX-DEDUCTION PIC 9(5)V99.
+```
+- Similar to `EMPLOYEE-TABLE`, but used for storing sorted employee details.
+
 
 ## Demo
 
