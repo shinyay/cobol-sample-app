@@ -12,6 +12,9 @@ IDENTIFICATION DIVISION.
 PROGRAM-ID. PayrollSystem.
 ```
 
+### DATA DIVISION
+This section defines the data structures and variables used in the program.
+
 
 ## Demo
 
