@@ -14,3 +14,8 @@ This workshop is designed to help you understand the process of modernizing lega
     ```plaintext
     When determining the scope of a COBOL to Java conversion project, how do I determine the scope of the code base, modules, and functionality my team needs to migrate? What are the steps involved?
    ```
+
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
+
+</details>
