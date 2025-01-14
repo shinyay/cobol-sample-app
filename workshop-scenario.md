@@ -7,3 +7,8 @@ This workshop is designed to help you understand the process of modernizing lega
 ## Step 1: Ask GitHub Copilot how to migrate the code to a new language
 
 ### Task 1: Ask GitHub Copilot on GitHub Copilot Chat
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+2. Ask GitHub Copilot for the following:
+
+   - ```In determining the scope of a COBOL to Java conversion project, how should we determine the scope of the code base, modules, and functionality that Tomu needs to migrate? Please provide the steps involved.```
