@@ -1,5 +1,7 @@
 # COBOL Sample Application
 
+This repository contains a COBOL program that demonstrates basic data handling and processing.
+
 ## Description
 
 This COBOL program is a simple payroll system.
