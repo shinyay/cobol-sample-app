@@ -12,5 +12,5 @@ This workshop is designed to help you understand the process of modernizing lega
 2. Ask GitHub Copilot for the following:
 
     ```plaintext
-   In determining the scope of a COBOL to Java conversion project, how should we determine the scope of the code base, modules, and functionality that Tomu needs to migrate? Please provide the steps involved.
+    When determining the scope of a COBOL to Java conversion project, how do I determine the scope of the code base, modules, and functionality my team needs to migrate? What are the steps involved?
    ```
