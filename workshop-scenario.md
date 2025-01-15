@@ -190,3 +190,13 @@ By leveraging GitHub Copilot to automate these tasks, you can efficiently invent
 ## Step 2: Analyze the COBOL Code
 
 ### Task 1: Analyze the Code Dependency
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   Target code is `main.cobc` in the `multiple-file` directory.
+
+    ```plaintext
+    #file:main.cobc Analyze the dependencies required to execute this code.
+   ```
