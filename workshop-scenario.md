@@ -272,3 +272,220 @@ By ensuring these dependencies are met, the `main.cobc-1` program can execute su
 
 <details>
 <summary>3. GitHub Copilot Sample Response</summary>
+Sure, let's go through the provided COBOL code in detail.
+
+### Identification Division
+This section identifies the program.
+
+```cobol
+IDENTIFICATION DIVISION.
+       PROGRAM-ID. PayrollSystem.
+```
+
+### Data Division
+This section defines the data structures and variables used in the program.
+
+#### Working-Storage Section
+This section contains variables that are used throughout the program.
+
+```cobol
+       DATA DIVISION.
+       WORKING-STORAGE SECTION.
+       01  MAX-EMPLOYEES           PIC 9(3) VALUE 5.
+```
+
+- `MAX-EMPLOYEES` is a numeric variable with a maximum value of 999, initialized to 5.
+
+#### Employee Table
+This table stores employee details.
+
+```cobol
+       01  EMPLOYEE-TABLE.
+           05  EMPLOYEE-ENTRY OCCURS 5 TIMES.
+               10  EMPLOYEE-ID        PIC X(5).
+               10  EMPLOYEE-NAME      PIC X(20).
+               10  DEPARTMENT         PIC X(10).
+               10  GROSS-SALARY       PIC 9(7)V99.
+               10  BONUS              PIC 9(5)V99.
+               10  DEDUCTIONS         PIC 9(5)V99.
+               10  NET-SALARY         PIC 9(7)V99.
+               10  TAX-DEDUCTION      PIC 9(5)V99.
+```
+
+- `EMPLOYEE-ENTRY` occurs 5 times, each entry containing details like `EMPLOYEE-ID`, `EMPLOYEE-NAME`, `DEPARTMENT`, `GROSS-SALARY`, `BONUS`, `DEDUCTIONS`, `NET-SALARY`, and `TAX-DEDUCTION`.
+
+#### Sorted Employee Table
+This table stores sorted employee details.
+
+```cobol
+       01  SORTED-EMPLOYEE-TABLE.
+           05  SORTED-EMPLOYEE-ENTRY OCCURS 5 TIMES.
+               10  SORT-EMPLOYEE-ID   PIC X(5).
+               10  SORT-EMPLOYEE-NAME PIC X(20).
+               10  SORT-DEPARTMENT    PIC X(10).
+               10  SORT-GROSS-SALARY  PIC 9(7)V99.
+               10  SORT-BONUS         PIC 9(5)V99.
+               10  SORT-DEDUCTIONS    PIC 9(5)V99.
+               10  SORT-NET-SALARY    PIC 9(7)V99.
+               10  SORT-TAX-DEDUCTION PIC 9(5)V99.
+```
+
+- Similar to `EMPLOYEE-TABLE`, but used for sorted data.
+
+#### Department Totals
+This table stores total salaries for each department.
+
+```cobol
+       01  DEPARTMENT-TOTALS.
+           05  DEPARTMENT-TOTAL OCCURS 5 TIMES.
+               10  DEPT-NAME          PIC X(10).
+               10  TOTAL-SALARY       PIC 9(7)V99.
+```
+
+- `DEPARTMENT-TOTAL` occurs 5 times, each entry containing `DEPT-NAME` and `TOTAL-SALARY`.
+
+#### Additional Variables
+These variables are used for various calculations and temporary storage.
+
+```cobol
+       01  EMPLOYEE-INDEX           PIC 9(3).
+       01  INNER-INDEX              PIC 9(3).
+       01  TAX-RATE                 PIC 9V99 VALUE 0.20.
+       01  BONUS-RATE               PIC 9V99 VALUE 0.10.
+       01  DEDUCTION-RATE           PIC 9V99 VALUE 0.05.
+       01  DEPARTMENT-INDEX         PIC 9(3).
+
+       01  TEMP-ID                  PIC X(5).
+       01  TEMP-NAME                PIC X(20).
+       01  TEMP-DEPARTMENT          PIC X(10).
+       01  TEMP-SALARY              PIC 9(7)V99.
+
+       01  LNK-GROSS-SALARY         PIC 9(7)V99.
+       01  LNK-BONUS                PIC 9(5)V99.
+```
+
+### Procedure Division
+This section contains the executable code.
+
+#### Main Procedure
+The main entry point of the program.
+
+```cobol
+       PROCEDURE DIVISION.
+       MAIN-PROCEDURE.
+           PERFORM INITIALIZE-EMPLOYEES.
+           PERFORM SORT-EMPLOYEES.
+           PERFORM CALCULATE-NET-SALARIES.
+           PERFORM CALCULATE-DEPARTMENT-TOTALS.
+           PERFORM DISPLAY-EMPLOYEES.
+           PERFORM DISPLAY-DEPARTMENT-TOTALS.
+           STOP RUN.
+```
+
+- Calls various sub-procedures to initialize, sort, calculate, and display data.
+
+#### Initialize Employees
+Initializes the employee data.
+
+```cobol
+       INITIALIZE-EMPLOYEES.
+           MOVE "E001" TO EMPLOYEE-ID(1).
+           MOVE "Alice Johnson" TO EMPLOYEE-NAME(1).
+           MOVE "HR" TO DEPARTMENT(1).
+           MOVE 70000.00 TO GROSS-SALARY(1).
+           ...
+           MOVE "E005" TO EMPLOYEE-ID(5).
+           MOVE "Eve Davis" TO EMPLOYEE-NAME(5).
+           MOVE "HR" TO DEPARTMENT(5).
+           MOVE 75000.00 TO GROSS-SALARY(5).
+```
+
+- Moves hardcoded values to the `EMPLOYEE-TABLE`.
+
+#### Sort Employees
+Sorts the employees by their IDs.
+
+```cobol
+       SORT-EMPLOYEES.
+           PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+               MOVE EMPLOYEE-ID(EMPLOYEE-INDEX) TO SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
+               ...
+           END-PERFORM.
+           ...
+           PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX >= MAX-EMPLOYEES
+               ...
+               END-PERFORM.
+```
+
+- Copies data from `EMPLOYEE-TABLE` to `SORTED-EMPLOYEE-TABLE`.
+- Sorts the `SORTED-EMPLOYEE-TABLE` using a bubble sort algorithm.
+
+#### Calculate Net Salaries
+Calculates the net salary for each employee.
+
+```cobol
+       CALCULATE-NET-SALARIES.
+           PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+               MOVE SORT-GROSS-SALARY(EMPLOYEE-INDEX) TO LNK-GROSS-SALARY
+               CALL 'CalculateBonus' USING LNK-GROSS-SALARY LNK-BONUS
+               MOVE LNK-BONUS TO SORT-BONUS(EMPLOYEE-INDEX)
+               ...
+           END-PERFORM.
+```
+
+- Uses a subroutine `CalculateBonus` to compute bonuses.
+- Computes deductions, tax, and net salary.
+
+#### Calculate Department Totals
+Calculates total salaries for each department.
+
+```cobol
+       CALCULATE-DEPARTMENT-TOTALS.
+           PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+               MOVE SPACES TO DEPT-NAME(DEPARTMENT-INDEX)
+               MOVE 0 TO TOTAL-SALARY(DEPARTMENT-INDEX)
+           END-PERFORM.
+           ...
+           PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+               ...
+               END-PERFORM.
+```
+
+- Initializes department totals.
+- Aggregates net salaries by department.
+
+#### Display Employees
+Displays employee details.
+
+```cobol
+       DISPLAY-EMPLOYEES.
+           DISPLAY "Employee Payroll Information".
+           DISPLAY "-----------------------------".
+           PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+               DISPLAY "Employee ID: " SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
+               ...
+           END-PERFORM.
+```
+
+- Displays sorted employee details.
+
+#### Display Department Totals
+Displays total salaries for each department.
+
+```cobol
+       DISPLAY-DEPARTMENT-TOTALS.
+           DISPLAY "Department Salary Totals".
+           DISPLAY "-----------------------------".
+           PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+               IF DEPT-NAME(DEPARTMENT-INDEX) NOT = SPACES
+                   DISPLAY "Department: " DEPT-NAME(DEPARTMENT-INDEX)
+                   ...
+               END-IF
+           END-PERFORM.
+```
+
+- Displays department totals if the department name is not empty.
+
+This COBOL program is a payroll system that initializes employee data, sorts it, calculates net salaries, aggregates department totals, and displays the results.
+</details>
+
