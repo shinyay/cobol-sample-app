@@ -257,3 +257,5 @@ To execute the code in `main.cobc-1`, ensure the following dependencies are met:
 
 By ensuring these dependencies are met, the `main.cobc-1` program can execute successfully.
 </details>
+
+### Task 2: Explain the code
