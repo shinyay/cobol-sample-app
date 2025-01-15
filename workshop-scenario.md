@@ -491,3 +491,13 @@ This COBOL program is a payroll system that initializes employee data, sorts it,
 
 ### Task 3: Identify the Subroutines
 
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   Target code is `main.cobc` in the `multiple-file` directory.
+
+    ```plaintext
+    #file:main.cobc What are the subroutines defined in this code?
+    ```
+
