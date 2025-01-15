@@ -186,3 +186,5 @@ Sure, here is a detailed procedure for inventorying the COBOL code base, along w
 
 By leveraging GitHub Copilot to automate these tasks, you can efficiently inventory the COBOL code base and gather the necessary information for the migration project.
 </details>
+
+## Step 2: Analyze the COBOL Code
