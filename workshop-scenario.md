@@ -188,3 +188,5 @@ By leveraging GitHub Copilot to automate these tasks, you can efficiently invent
 </details>
 
 ## Step 2: Analyze the COBOL Code
+
+### Task 1: Analyze the Code Dependency
