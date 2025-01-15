@@ -536,3 +536,177 @@ These subroutines are called in sequence from the `MAIN-PROCEDURE` to perform th
     ```plaintext
     Explain each subrouines for #file:main.cobc in detail and explain the relationship of each subroutines among subroutines.
     ```
+<details>
+<summary>5. GitHub Copilot Sample Response</summary>
+Sure, let's explain each subroutine in detail and their relationships in the main.cobc file.
+
+### Subroutines in main.cobc
+
+1. **MAIN-PROCEDURE**
+   - **Purpose**: This is the main entry point of the program. It orchestrates the execution of other subroutines.
+   - **Details**: It sequentially calls the subroutines to initialize data, sort employees, calculate net salaries, calculate department totals, and display the results.
+   - **Code**:
+     ```cobol
+     MAIN-PROCEDURE.
+         PERFORM INITIALIZE-EMPLOYEES.
+         PERFORM SORT-EMPLOYEES.
+         PERFORM CALCULATE-NET-SALARIES.
+         PERFORM CALCULATE-DEPARTMENT-TOTALS.
+         PERFORM DISPLAY-EMPLOYEES.
+         PERFORM DISPLAY-DEPARTMENT-TOTALS.
+         STOP RUN.
+     ```
+
+2. **INITIALIZE-EMPLOYEES**
+   - **Purpose**: Initializes the employee data with hardcoded values.
+   - **Details**: Moves predefined values into the `EMPLOYEE-TABLE`.
+   - **Code**:
+     ```cobol
+     INITIALIZE-EMPLOYEES.
+         MOVE "E001" TO EMPLOYEE-ID(1).
+         MOVE "Alice Johnson" TO EMPLOYEE-NAME(1).
+         MOVE "HR" TO DEPARTMENT(1).
+         MOVE 70000.00 TO GROSS-SALARY(1).
+         ...
+         MOVE "E005" TO EMPLOYEE-ID(5).
+         MOVE "Eve Davis" TO EMPLOYEE-NAME(5).
+         MOVE "HR" TO DEPARTMENT(5).
+         MOVE 75000.00 TO GROSS-SALARY(5).
+     ```
+
+3. **SORT-EMPLOYEES**
+   - **Purpose**: Sorts the employees based on their IDs.
+   - **Details**: Copies data from `EMPLOYEE-TABLE` to `SORTED-EMPLOYEE-TABLE` and sorts it using a bubble sort algorithm.
+   - **Code**:
+     ```cobol
+     SORT-EMPLOYEES.
+         PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+             MOVE EMPLOYEE-ID(EMPLOYEE-INDEX) TO SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
+             MOVE EMPLOYEE-NAME(EMPLOYEE-INDEX) TO SORT-EMPLOYEE-NAME(EMPLOYEE-INDEX)
+             MOVE DEPARTMENT(EMPLOYEE-INDEX) TO SORT-DEPARTMENT(EMPLOYEE-INDEX)
+             MOVE GROSS-SALARY(EMPLOYEE-INDEX) TO SORT-GROSS-SALARY(EMPLOYEE-INDEX)
+         END-PERFORM.
+
+         PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX >= MAX-EMPLOYEES
+             PERFORM VARYING INNER-INDEX FROM 1 BY 1 UNTIL INNER-INDEX > MAX-EMPLOYEES - EMPLOYEE-INDEX
+                 IF SORT-EMPLOYEE-ID(INNER-INDEX) > SORT-EMPLOYEE-ID(INNER-INDEX + 1)
+                     MOVE SORT-EMPLOYEE-ID(INNER-INDEX) TO TEMP-ID
+                     MOVE SORT-EMPLOYEE-NAME(INNER-INDEX) TO TEMP-NAME
+                     MOVE SORT-DEPARTMENT(INNER-INDEX) TO TEMP-DEPARTMENT
+                     MOVE SORT-GROSS-SALARY(INNER-INDEX) TO TEMP-SALARY
+                     MOVE SORT-EMPLOYEE-ID(INNER-INDEX + 1) TO SORT-EMPLOYEE-ID(INNER-INDEX)
+                     MOVE SORT-EMPLOYEE-NAME(INNER-INDEX + 1) TO SORT-EMPLOYEE-NAME(INNER-INDEX)
+                     MOVE SORT-DEPARTMENT(INNER-INDEX + 1) TO SORT-DEPARTMENT(INNER-INDEX)
+                     MOVE SORT-GROSS-SALARY(INNER-INDEX + 1) TO SORT-GROSS-SALARY(INNER-INDEX)
+                     MOVE TEMP-ID TO SORT-EMPLOYEE-ID(INNER-INDEX + 1)
+                     MOVE TEMP-NAME TO SORT-EMPLOYEE-NAME(INNER-INDEX + 1)
+                     MOVE TEMP-DEPARTMENT TO SORT-DEPARTMENT(INNER-INDEX + 1)
+                     MOVE TEMP-SALARY TO SORT-GROSS-SALARY(INNER-INDEX + 1)
+                 END-IF
+             END-PERFORM
+         END-PERFORM.
+     ```
+
+4. **CALCULATE-NET-SALARIES**
+   - **Purpose**: Calculates the net salaries for employees.
+   - **Details**: Calls the `CalculateBonus` program to compute bonuses and then calculates deductions, tax, and net salary.
+   - **Code**:
+     ```cobol
+     CALCULATE-NET-SALARIES.
+         PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+             MOVE SORT-GROSS-SALARY(EMPLOYEE-INDEX) TO LNK-GROSS-SALARY
+             CALL 'CalculateBonus' USING LNK-GROSS-SALARY LNK-BONUS
+             MOVE LNK-BONUS TO SORT-BONUS(EMPLOYEE-INDEX)
+             COMPUTE SORT-DEDUCTIONS(EMPLOYEE-INDEX) = SORT-GROSS-SALARY(EMPLOYEE-INDEX) * DEDUCTION-RATE
+             COMPUTE SORT-TAX-DEDUCTION(EMPLOYEE-INDEX) = SORT-GROSS-SALARY(EMPLOYEE-INDEX) * TAX-RATE
+             COMPUTE SORT-NET-SALARY(EMPLOYEE-INDEX) = SORT-GROSS-SALARY(EMPLOYEE-INDEX) + SORT-BONUS(EMPLOYEE-INDEX) - SORT-TAX-DEDUCTION(EMPLOYEE-INDEX) - SORT-DEDUCTIONS(EMPLOYEE-INDEX)
+         END-PERFORM.
+     ```
+
+5. **CALCULATE-DEPARTMENT-TOTALS**
+   - **Purpose**: Calculates total salaries for each department.
+   - **Details**: Initializes department totals and aggregates net salaries by department.
+   - **Code**:
+     ```cobol
+     CALCULATE-DEPARTMENT-TOTALS.
+         PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+             MOVE SPACES TO DEPT-NAME(DEPARTMENT-INDEX)
+             MOVE 0 TO TOTAL-SALARY(DEPARTMENT-INDEX)
+         END-PERFORM.
+
+         PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+             PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+                 IF DEPT-NAME(DEPARTMENT-INDEX) = SPACES OR DEPT-NAME(DEPARTMENT-INDEX) = SORT-DEPARTMENT(EMPLOYEE-INDEX)
+                     IF DEPT-NAME(DEPARTMENT-INDEX) = SPACES
+                         MOVE SORT-DEPARTMENT(EMPLOYEE-INDEX) TO DEPT-NAME(DEPARTMENT-INDEX)
+                     END-IF
+                     ADD SORT-NET-SALARY(EMPLOYEE-INDEX) TO TOTAL-SALARY(DEPARTMENT-INDEX)
+                     EXIT PERFORM
+                 END-IF
+             END-PERFORM
+         END-PERFORM.
+     ```
+
+6. **DISPLAY-EMPLOYEES**
+   - **Purpose**: Displays the sorted employee details.
+   - **Details**: Iterates through the sorted employee table and displays each employee's details.
+   - **Code**:
+     ```cobol
+     DISPLAY-EMPLOYEES.
+         DISPLAY "Employee Payroll Information".
+         DISPLAY "-----------------------------".
+         PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
+             DISPLAY "Employee ID: " SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
+             DISPLAY "Name: " SORT-EMPLOYEE-NAME(EMPLOYEE-INDEX)
+             DISPLAY "Department: " SORT-DEPARTMENT(EMPLOYEE-INDEX)
+             DISPLAY "Gross Salary: $" SORT-GROSS-SALARY(EMPLOYEE-INDEX)
+             DISPLAY "Bonus: $" SORT-BONUS(EMPLOYEE-INDEX)
+             DISPLAY "Deductions: $" SORT-DEDUCTIONS(EMPLOYEE-INDEX)
+             DISPLAY "Tax Deduction: $" SORT-TAX-DEDUCTION(EMPLOYEE-INDEX)
+             DISPLAY "Net Salary: $" SORT-NET-SALARY(EMPLOYEE-INDEX)
+             DISPLAY "-----------------------------"
+         END-PERFORM.
+     ```
+
+7. **DISPLAY-DEPARTMENT-TOTALS**
+   - **Purpose**: Displays the total salaries for each department.
+   - **Details**: Iterates through the department totals and displays each department's total salary.
+   - **Code**:
+     ```cobol
+     DISPLAY-DEPARTMENT-TOTALS.
+         DISPLAY "Department Salary Totals".
+         DISPLAY "-----------------------------".
+         PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
+             IF DEPT-NAME(DEPARTMENT-INDEX) NOT = SPACES
+                 DISPLAY "Department: " DEPT-NAME(DEPARTMENT-INDEX)
+                 DISPLAY "Total Salary: $" TOTAL-SALARY(DEPARTMENT-INDEX)
+                 DISPLAY "-----------------------------"
+             END-IF
+         END-PERFORM.
+     ```
+
+### Relationship Among Subroutines
+
+1. **MAIN-PROCEDURE**:
+   - Acts as the controller, calling each subroutine in sequence to perform the overall task of the payroll system.
+
+2. **INITIALIZE-EMPLOYEES**:
+   - Sets up the initial data required for further processing.
+
+3. **SORT-EMPLOYEES**:
+   - Organizes the employee data to facilitate easier calculations and display.
+
+4. **CALCULATE-NET-SALARIES**:
+   - Uses the sorted data to compute net salaries, which are necessary for department totals and display.
+
+5. **CALCULATE-DEPARTMENT-TOTALS**:
+   - Aggregates the net salaries calculated in the previous step to provide department-wise totals.
+
+6. **DISPLAY-EMPLOYEES**:
+   - Uses the sorted and calculated data to display individual employee details.
+
+7. **DISPLAY-DEPARTMENT-TOTALS**:
+   - Uses the aggregated department totals to display overall department salary information.
+
+Each subroutine builds upon the results of the previous ones, ensuring a structured and logical flow of data processing and display in the payroll system.
+</details>
