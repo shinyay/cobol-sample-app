@@ -501,3 +501,31 @@ This COBOL program is a payroll system that initializes employee data, sorts it,
     #file:main.cobc What are the subroutines defined in this code?
     ```
 
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
+The subroutines defined in the main.cobc code are:
+
+1. **MAIN-PROCEDURE**
+   - This is the main entry point of the program and calls other subroutines in sequence.
+
+2. **INITIALIZE-EMPLOYEES**
+   - Initializes the employee data with hardcoded values.
+
+3. **SORT-EMPLOYEES**
+   - Sorts the employees based on their IDs using a bubble sort algorithm.
+
+4. **CALCULATE-NET-SALARIES**
+   - Calculates the net salaries for employees by calling the `CalculateBonus` program and computing deductions and tax.
+
+5. **CALCULATE-DEPARTMENT-TOTALS**
+   - Calculates total salaries for each department by aggregating net salaries.
+
+6. **DISPLAY-EMPLOYEES**
+   - Displays the sorted employee details.
+
+7. **DISPLAY-DEPARTMENT-TOTALS**
+   - Displays the total salaries for each department.
+
+These subroutines are called in sequence from the `MAIN-PROCEDURE` to perform the various tasks required by the payroll system.
+</details>
+
