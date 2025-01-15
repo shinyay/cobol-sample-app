@@ -67,6 +67,7 @@ By following these steps, you can comprehensively determine the scope of the COB
     ```plaintext
     Thank you so much for your answer about COBOL migration. Now I would like to understand the each step in detail. Describe in detail the procedure for inventorying the COBOL code base. Also, please tell us what GitHub Copilot can assist in those steps.
     ```
+
 <details>
 <summary>2. GitHub Copilot Sample Response</summary>
 Sure, here is a detailed procedure for inventorying the COBOL code base, along with how GitHub Copilot can assist in those steps:
