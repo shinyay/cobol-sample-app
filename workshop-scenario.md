@@ -529,3 +529,10 @@ The subroutines defined in the main.cobc code are:
 These subroutines are called in sequence from the `MAIN-PROCEDURE` to perform the various tasks required by the payroll system.
 </details>
 
+4. Ask GitHub Copilot for the following:
+
+   Target code is `main.cobc` in the `multiple-file` directory.
+
+    ```plaintext
+    Explain each subrouines for #file:main.cobc in detail and explain the relationship of each subroutines among subroutines.
+    ```
