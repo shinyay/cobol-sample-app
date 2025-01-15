@@ -199,7 +199,7 @@ By leveraging GitHub Copilot to automate these tasks, you can efficiently invent
 
     ```plaintext
     #file:main.cobc Analyze the dependencies required to execute this code.
-   ```
+    ```
 
 <details>
 <summary>3. GitHub Copilot Sample Response</summary>
@@ -259,3 +259,13 @@ By ensuring these dependencies are met, the `main.cobc-1` program can execute su
 </details>
 
 ### Task 2: Explain the code
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   Target code is `main.cobc` in the `multiple-file` directory.
+
+    ```plaintext
+    #file:main.cobc Explain the code in detail.
+    ```
