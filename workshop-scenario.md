@@ -267,5 +267,8 @@ By ensuring these dependencies are met, the `main.cobc-1` program can execute su
    Target code is `main.cobc` in the `multiple-file` directory.
 
     ```plaintext
-    #file:main.cobc Explain the code in detail.
+    @workspace /explain #file:main.cobc in detail.
     ```
+
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
