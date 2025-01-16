@@ -1471,4 +1471,12 @@ These comments should help increase the readability of the COBOL code and provid
 
 ## Step 5: Convert the COBOL code to Java
 
-### Task 1:
+### Task 1: Define the Class Conversion Criteria
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   What criteria should be considered for class design when reworking COBOL code into Java?
+   ```
