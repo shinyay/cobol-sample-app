@@ -1526,3 +1526,9 @@ When reworking COBOL code into Java, several criteria should be considered for c
 
 1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
 
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   Based on the design doc #file:design-doc_main.md and conversion criteria #file:java-conversion-criteria.md , what classes do we need when we convert #file:main.cobc to Java code?
+   Please tell the classes and the reason why you decided.
+   ```
