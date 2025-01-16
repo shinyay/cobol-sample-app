@@ -1466,5 +1466,5 @@ These comments should help increase the readability of the COBOL code and provid
 
 </details>
 
-4. Click **Edit with Copilot**
-![Image](https://github.com/user-attachments/assets/c49b3bd4-19a9-417c-8f3f-08f929f21248)
+4. Click **Apply in Editor**
+![Image](https://github.com/user-attachments/assets/6c1b88a8-92a4-4915-8357-91c2b9ee3631)
