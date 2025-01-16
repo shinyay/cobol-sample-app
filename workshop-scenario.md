@@ -1254,3 +1254,7 @@ This template provides a comprehensive structure for documenting the design of y
 This design document provides a comprehensive structure for documenting the design of your COBOL program, ensuring that all key aspects are covered and clearly defined.
 
 </details>
+
+### Task 3: Ask GitHub Copilot to increase the readability of the code
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
