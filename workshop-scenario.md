@@ -712,3 +712,5 @@ Each subroutine builds upon the results of the previous ones, ensuring a structu
 </details>
 
 ## Step 3: Convert the COBOL code to a New Language
+
+### Task 1: Ask GitHub Copilot to convert the code to Java
