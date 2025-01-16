@@ -1056,3 +1056,27 @@ for emp in employees:
 
 By following these steps, you can systematically migrate your COBOL program to Python, ensuring that the new application is robust, maintainable, and meets the original requirements.
 </details>
+
+## Step 4: Create a Design Document
+
+### Task 1: Ask GitHub Copilot to create a design document
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   I would like to create a design document for our COBOL program. The design document should include the following sections, if possible:
+   - Introduction
+   - System Overview
+   - Functional Requirements
+   - Non-Functional Requirements
+   - System Architecture
+   - Data Model
+   - User Interface Design
+   - Error Handling and Logging
+   - Testing Strategy
+   - Deployment Plan
+
+   Please provide a template for this design document.
+   ```
