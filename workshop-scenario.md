@@ -17,7 +17,7 @@ This workshop is designed to help you understand the process of modernizing lega
 
 <details>
 <summary>3. GitHub Copilot Sample Response</summary>
-To determine the scope of the code base, modules, and functionality for a COBOL to Java conversion project, follow these steps:
+To determine the scope of the code base, modules, and functionality for a COBOL to a new language conversion project, follow these steps:
 
 1. **Inventory the COBOL Codebase**:
    - Identify all COBOL programs, scripts, and related files.
@@ -710,3 +710,4 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
 
 Each subroutine builds upon the results of the previous ones, ensuring a structured and logical flow of data processing and display in the payroll system.
 </details>
+
