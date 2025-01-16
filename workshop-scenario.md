@@ -1462,3 +1462,6 @@ IDENTIFICATION DIVISION.
 These comments should help increase the readability of the COBOL code and provide a clear understanding of the design details.
 
 </details>
+
+4. Click **Edit with Copilot**
+![Image](https://github.com/user-attachments/assets/c49b3bd4-19a9-417c-8f3f-08f929f21248)
