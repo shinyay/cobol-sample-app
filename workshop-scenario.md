@@ -197,6 +197,9 @@ By leveraging GitHub Copilot to automate these tasks, you can efficiently invent
     Speaking of COBOL migration, I am aware that there is such a thing as a tool to convert COBOL to multiple languages. What are the advantages of using GitHub Copilot to migrate code based on an understanding of the COBOL code base compared to using such a conversion tool?
     ```
 
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
+
 ## Step 2: Analyze the COBOL Code
 
 ### Task 1: Analyze the Code Dependency
