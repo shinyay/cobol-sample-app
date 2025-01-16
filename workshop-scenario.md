@@ -1080,3 +1080,118 @@ By following these steps, you can systematically migrate your COBOL program to P
 
    Please provide a template for this design document.
    ```
+
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
+### Design Document Template for COBOL Program
+
+#### 1. Introduction
+   - **Purpose**: Describe the purpose of the document and the system it covers.
+   - **Scope**: Define the scope of the system and what is included in the document.
+   - **Audience**: Identify the intended audience for the document.
+
+#### 2. System Overview
+   - **System Description**: Provide a high-level description of the system and its main functionalities.
+   - **Objectives**: Outline the main objectives and goals of the system.
+
+#### 3. Functional Requirements
+   - **Employee Data Initialization**: Describe the process of initializing employee data.
+   - **Sorting Employees**: Explain how employees are sorted by their IDs.
+   - **Net Salary Calculation**: Detail the calculation of net salaries, including bonuses, deductions, and tax deductions.
+   - **Department Totals Calculation**: Describe how total salaries for each department are calculated.
+   - **Displaying Information**: Explain how employee payroll information and department salary totals are displayed.
+
+#### 4. Non-Functional Requirements
+   - **Performance**: Define performance requirements, such as response time and throughput.
+   - **Scalability**: Describe how the system can scale to handle increased load.
+   - **Maintainability**: Outline requirements for maintainability, including code readability and documentation.
+   - **Reliability**: Define reliability requirements, such as uptime and error rates.
+
+#### 5. System Architecture
+   - **High-Level Architecture**: Provide a high-level diagram and description of the system architecture.
+   - **Components**: Describe the main components of the system and their interactions.
+
+#### 6. Data Model
+   - **Data Structures**: Define the data structures used in the system, including employee and department tables.
+   - **Data Flow**: Describe how data flows through the system, from initialization to display.
+
+#### 7. User Interface Design
+   - **Console Output**: Describe the console output for displaying employee payroll information and department salary totals.
+   - **User Interaction**: Explain how users interact with the system, if applicable.
+
+#### 8. Error Handling and Logging
+   - **Error Handling**: Describe how errors are handled in the system, including input validation and exception handling.
+   - **Logging**: Outline the logging strategy for capturing system events and errors.
+
+#### 9. Testing Strategy
+   - **Unit Testing**: Describe the approach for unit testing individual components.
+   - **Integration Testing**: Explain how integration testing will be performed to ensure components work together.
+   - **User Acceptance Testing**: Outline the process for user acceptance testing to validate the system with end-users.
+
+#### 10. Deployment Plan
+   - **Deployment Steps**: Provide a step-by-step plan for deploying the system.
+   - **Environment Setup**: Describe the environment setup required for deployment, including hardware and software requirements.
+   - **Rollback Plan**: Outline a rollback plan in case of deployment issues.
+
+---
+
+### Example Design Document for COBOL Program
+
+#### 1. Introduction
+   - **Purpose**: This document provides a detailed design for the COBOL payroll system, outlining its functionalities, architecture, and deployment plan.
+   - **Scope**: The document covers the initialization, sorting, calculation, and display of employee payroll information and department salary totals.
+   - **Audience**: This document is intended for developers, testers, and system administrators involved in the development and maintenance of the payroll system.
+
+#### 2. System Overview
+   - **System Description**: The payroll system initializes employee data, sorts employees, calculates net salaries, calculates department totals, and displays the results.
+   - **Objectives**: The main objectives are to automate payroll processing, ensure accurate salary calculations, and provide clear payroll information.
+
+#### 3. Functional Requirements
+   - **Employee Data Initialization**: Initialize employee data with hardcoded values.
+   - **Sorting Employees**: Sort employees by their IDs using a bubble sort algorithm.
+   - **Net Salary Calculation**: Calculate net salaries by computing bonuses, deductions, and tax deductions.
+   - **Department Totals Calculation**: Calculate total salaries for each department by aggregating net salaries.
+   - **Displaying Information**: Display employee payroll information and department salary totals on the console.
+
+#### 4. Non-Functional Requirements
+   - **Performance**: The system should process payroll for up to 1000 employees within 5 seconds.
+   - **Scalability**: The system should be able to scale to handle additional employees and departments.
+   - **Maintainability**: The code should be well-documented and follow coding standards for readability and maintainability.
+   - **Reliability**: The system should have an uptime of 99.9% and handle errors gracefully.
+
+#### 5. System Architecture
+   - **High-Level Architecture**: The system consists of a main program that calls subroutines for initialization, sorting, calculation, and display.
+   - **Components**: The main components are the employee table, sorted employee table, department totals, and subroutines for each functionality.
+
+#### 6. Data Model
+   - **Data Structures**:
+     - **EMPLOYEE-TABLE**: Stores employee data.
+     - **SORTED-EMPLOYEE-TABLE**: Stores sorted employee data.
+     - **DEPARTMENT-TOTALS**: Stores department salary totals.
+   - **Data Flow**: Data flows from initialization to sorting, calculation, and display.
+
+#### 7. User Interface Design
+   - **Console Output**: The system displays employee payroll information and department salary totals on the console.
+   - **User Interaction**: Users interact with the system by running the program and viewing the console output.
+
+#### 8. Error Handling and Logging
+   - **Error Handling**: The system validates input data and handles errors during processing.
+   - **Logging**: The system logs key events and errors to a log file for troubleshooting.
+
+#### 9. Testing Strategy
+   - **Unit Testing**: Each subroutine will be tested individually to ensure correct functionality.
+   - **Integration Testing**: The system will be tested as a whole to ensure all components work together.
+   - **User Acceptance Testing**: End-users will validate the system to ensure it meets their requirements.
+
+#### 10. Deployment Plan
+   - **Deployment Steps**:
+     1. Compile the COBOL program.
+     2. Deploy the executable to the target environment.
+     3. Run initial tests to ensure the system is functioning correctly.
+   - **Environment Setup**: The target environment should have a COBOL compiler and runtime installed.
+   - **Rollback Plan**: In case of deployment issues, revert to the previous version of the system.
+
+---
+
+This template provides a comprehensive structure for documenting the design of your COBOL program, ensuring that all key aspects are covered and clearly defined.
+</details>
