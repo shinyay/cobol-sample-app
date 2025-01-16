@@ -1521,3 +1521,8 @@ When reworking COBOL code into Java, several criteria should be considered for c
    - **Mocking**: Use interfaces and dependency injection to facilitate mocking in tests.
 
 </details>
+
+### Task 2: Ask GitHub Copilot to define the class design
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
