@@ -856,7 +856,7 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
 Each subroutine builds upon the results of the previous ones, ensuring a structured and logical flow of data processing and display in the payroll system.
 </details>
 
-## Step 3: Convert the COBOL code to a New Language
+## Step 3: Process of the COBOL code to a New Language
 
 ### Task 1: Ask GitHub Copilot to convert the code to Java
 
