@@ -813,3 +813,5 @@ public class Employee {
 
 By following these steps, you can systematically migrate your COBOL program to Java, ensuring that the new application is robust, maintainable, and meets the original requirements.
 ```
+
+### Task 2: Ask GitHub Copilot to convert the code to Python
