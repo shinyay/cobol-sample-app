@@ -868,6 +868,7 @@ Each subroutine builds upon the results of the previous ones, ensuring a structu
    I would like to migrate our COBOL program to Java. COBOL and Java have different language concepts. Therefore, I need to consider what steps I should take to migrate. For example, I am aware that there are various considerations such as how to think about classes in Java, migrate subroutines and record definitions in COBOL to Java. What steps should we take to migrate from COBOL to Java?
    Please tell me the steps to migrate from COBOL to Java.
    ```
+
 <details>
 <summary>3. GitHub Copilot Sample Response</summary>
 Migrating a COBOL program to Java involves several steps to ensure a smooth transition while maintaining the functionality of the original application. Here are the steps you should take:
@@ -917,6 +918,8 @@ Migrating a COBOL program to Java involves several steps to ensure a smooth tran
    - **Deployment Plan**: Develop a plan for deploying the Java application.
    - **Documentation**: Document the new Java codebase and provide training for the development team.
    - **Ongoing Maintenance**: Plan for ongoing maintenance and support of the Java application.
+
+</details>
 
 ### Example: Migrating a COBOL Subroutine to Java
 
