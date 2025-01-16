@@ -714,3 +714,12 @@ Each subroutine builds upon the results of the previous ones, ensuring a structu
 ## Step 3: Convert the COBOL code to a New Language
 
 ### Task 1: Ask GitHub Copilot to convert the code to Java
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   I would like to migrate our COBOL program to Java. COBOL and Java have different language concepts. Therefore, I need to consider what steps I should take to migrate. For example, I am aware that there are various considerations such as how to think about classes in Java, migrate subroutines and record definitions in COBOL to Java. What steps should we take to migrate from COBOL to Java?
+   Please tell me the steps to migrate from COBOL to Java.
+   ```
