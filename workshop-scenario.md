@@ -1532,3 +1532,8 @@ When reworking COBOL code into Java, several criteria should be considered for c
    Based on the design doc #file:design-doc_main.md and conversion criteria #file:java-conversion-criteria.md , what classes do we need when we convert #file:main.cobc to Java code?
    Please tell the classes and the reason why you decided.
    ```
+
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
+
+</details>
