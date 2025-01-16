@@ -187,6 +187,16 @@ Sure, here is a detailed procedure for inventorying the COBOL code base, along w
 By leveraging GitHub Copilot to automate these tasks, you can efficiently inventory the COBOL code base and gather the necessary information for the migration project.
 </details>
 
+### Task 3: Ask GitHub Copilot about Benefits of Code to Doc / Doc to Code
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+    ```plaintext
+    Speaking of COBOL migration, I am aware that there is such a thing as a tool to convert COBOL to multiple languages. What are the advantages of using GitHub Copilot to migrate code based on an understanding of the COBOL code base compared to using such a conversion tool?
+    ```
+
 ## Step 2: Analyze the COBOL Code
 
 ### Task 1: Analyze the Code Dependency
