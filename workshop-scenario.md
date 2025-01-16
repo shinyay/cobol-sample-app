@@ -1136,4 +1136,12 @@ By following these steps, you can systematically migrate your COBOL program to P
 This template provides a comprehensive structure for documenting the design of your COBOL program, ensuring that all key aspects are covered and clearly defined.
 </details>
 
-### Task 2: Ask GitHub Copilot to create a
+### Task 2: Ask GitHub Copilot to create a design document
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   Based on the design doc template, plase make a desing doc of #file:main.cobc
+   ```
