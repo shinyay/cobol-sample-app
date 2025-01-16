@@ -1258,3 +1258,11 @@ This design document provides a comprehensive structure for documenting the desi
 ### Task 3: Ask GitHub Copilot to increase the readability of the code
 
 1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   I would like to increase the readability of #file:main.cobc . Please comment on the design details.
+   ```
+
+<details>
