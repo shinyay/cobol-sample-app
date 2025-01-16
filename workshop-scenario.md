@@ -265,6 +265,10 @@ for emp in employees:
 While automated conversion tools can be useful for quickly converting large codebases, using GitHub Copilot to manually migrate COBOL code provides greater customization, control, and understanding of the resulting code. This approach ensures higher code quality, maintainability, and the ability to integrate modern development practices and technologies.
 </details>
 
+### Task 4: Ask GitHub Copilot about the automatic conversion tool
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
 ## Step 2: Analyze the COBOL Code
 
 ### Task 1: Analyze the Code Dependency
