@@ -1468,3 +1468,7 @@ These comments should help increase the readability of the COBOL code and provid
 
 4. Click **Apply in Editor**
 ![Image](https://github.com/user-attachments/assets/6c1b88a8-92a4-4915-8357-91c2b9ee3631)
+
+## Step 5: Convert the COBOL code to Java
+
+### Task 1:
