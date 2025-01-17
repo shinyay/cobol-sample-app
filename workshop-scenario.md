@@ -2036,7 +2036,8 @@ This detailed class design ensures that the `PayrollSystem` class is robust, mai
 </details>
 
 <details>
-<summary>3. GitHub Copilot Sample Response - `BonusCalculator` class</summary>
+<summary>3. GitHub Copilot Sample Response - BonusCalculator class</summary>
+
 ### Detailed Class Design for `BonusCalculator` Class
 
 Based on the design document and conversion criteria, here is the detailed class design for the `BonusCalculator` class in Java:
