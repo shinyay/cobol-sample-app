@@ -6,6 +6,8 @@
 
 この COBOL プログラムは、シンプルな給与システムです。
 
+- [ワークショップシナリオ](./workshop-scenario.md)
+
 ### IDENTIFICATION DIVISION
 このセクションはプログラムを識別します。
 
