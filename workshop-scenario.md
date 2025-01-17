@@ -2100,3 +2100,9 @@ public class BonusCalculator {
 
 This detailed class design ensures that the `BonusCalculator` class is robust, maintainable, and leverages the object-oriented features of Java.
 </details>
+
+## Step 6: Generate Design Doc to Java
+
+Based on the design doc, ask GitHub Copilot to generate the Java code.
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
