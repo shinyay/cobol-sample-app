@@ -2038,7 +2038,7 @@ This detailed class design ensures that the `PayrollSystem` class is robust, mai
 </details>
 
 <details>
-<summary>3. GitHub Copilot Sample Response - BonusCalculator class</summary>
+<summary>5. GitHub Copilot Sample Response - BonusCalculator class</summary>
 
 ### Detailed Class Design for `BonusCalculator` Class
 
