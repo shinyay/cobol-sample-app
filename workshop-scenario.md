@@ -1086,6 +1086,7 @@ By following these steps, you can systematically migrate your COBOL program to P
 
 <details>
 <summary>3. GitHub Copilot Sample Response</summary>
+
 ### Design Document Template for COBOL Program
 
 #### 1. Introduction
@@ -1151,6 +1152,7 @@ This template provides a comprehensive structure for documenting the design of y
 
 <details>
 <summary>3. GitHub Copilot Sample Response</summary>
+
 ### Design Document for `main.cobc-1`
 
 #### 1. Introduction
