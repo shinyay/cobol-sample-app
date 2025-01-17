@@ -1758,3 +1758,10 @@ Designing the detauiled class design other than `Employee` class.
 
 <details>
 <summary>3. GitHub Copilot Sample Response - `DepartmentTotal` class</summary>
+
+</details>
+
+<details>
+<summary>3. GitHub Copilot Sample Response - `PayrollSystem` class</summary>
+
+</details>
