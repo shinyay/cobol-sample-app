@@ -1755,3 +1755,6 @@ Designing the detauiled class design other than `Employee` class.
 1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
 
 2. Ask GitHub Copilot same as `Employee` class.
+
+<details>
+<summary>3. GitHub Copilot Sample Response - `DepartmentTotal` class</summary>
