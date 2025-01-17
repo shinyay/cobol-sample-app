@@ -1563,3 +1563,9 @@ Similar code found with 1 license type
 ### Task 3: Java Class Detaild Design based on COBOL program
 
 1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   Based on the design doc #file:design-doc_main.md and conversion criteria #file:java-conversion-criteria.md , please provide the detailed class design of Employee Class.
+   ```
