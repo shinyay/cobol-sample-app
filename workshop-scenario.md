@@ -2137,3 +2137,13 @@ Based on the design doc, ask GitHub Copilot to generate the Java code.
    ```plaintext
    Based on design doc #file:payrollsystem-class.md , please propose PayrollSystem class as Java under java directory.
    ```
+
+### (Option) Task 4: Generate the Java code for `BonusCalculator` class
+
+1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+
+   ```plaintext
+   Based on design doc #file:bonuscalculator-class.md , please propose BonusCalculator class as Java under java directory.
+   ```
