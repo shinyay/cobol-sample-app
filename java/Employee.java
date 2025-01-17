@@ -1,5 +1,3 @@
-package java;
-
 /**
  * Represents an employee with attributes like ID, name, department, gross salary, bonus, deductions, net salary, and tax deduction.
  */
