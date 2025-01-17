@@ -2112,3 +2112,8 @@ Based on the design doc, ask GitHub Copilot to generate the Java code.
    ```plaintext
    Based on design doc #file:employee-class.md, please propose Employee class as Java under java directory.
    ```
+
+3. Click `Accept` after you check the code.
+![Image](https://github.com/user-attachments/assets/58fb683c-60b8-4d17-9e95-1cf3fe0f4f14)
+
+
