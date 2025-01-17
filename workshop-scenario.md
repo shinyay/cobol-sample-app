@@ -1847,7 +1847,8 @@ This detailed class design ensures that the `DepartmentTotal` class is robust, m
 </details>
 
 <details>
-<summary>3. GitHub Copilot Sample Response - `PayrollSystem` class</summary>
+<summary>4. GitHub Copilot Sample Response - PayrollSystem class</summary>
+
 ### Detailed Class Design for `PayrollSystem` Class
 
 Based on the design document and conversion criteria, here is the detailed class design for the `PayrollSystem` class in Java:
