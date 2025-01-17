@@ -2120,3 +2120,10 @@ Based on the design doc, ask GitHub Copilot to generate the Java code.
 
 ### Task 2: Generate the Java code for `DepartmentTotal` class
 
+1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+
+   ```plaintext
+   Based on design doc #file:departmenttotal-class.md, please propose DepartmentTotal class as Java under java directory.
+   ```
