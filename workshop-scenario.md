@@ -1765,3 +1765,8 @@ Designing the detauiled class design other than `Employee` class.
 <summary>3. GitHub Copilot Sample Response - `PayrollSystem` class</summary>
 
 </details>
+
+<details>
+<summary>3. GitHub Copilot Sample Response - `BonusCalculator` class</summary>
+
+</details>
