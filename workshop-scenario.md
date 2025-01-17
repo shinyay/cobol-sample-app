@@ -1559,3 +1559,7 @@ These classes ensure that the functionality of the original COBOL program is pre
 
 Similar code found with 1 license type
 </details>
+
+### Task 3: Java Class Detaild Design based on COBOL program
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
