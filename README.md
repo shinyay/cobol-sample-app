@@ -5,6 +5,9 @@ This repository contains a COBOL program that demonstrates basic data handling a
 ## Description
 
 This COBOL program is a simple payroll system.
+Using this applicarion, I will provide a COBOL migration workshop.
+
+- [Workshop Scenario](./workshop-scenario.md)
 
 ### IDENTIFICATION DIVISION
 This section identifies the program.
