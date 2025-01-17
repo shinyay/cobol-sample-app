@@ -1758,6 +1758,7 @@ Designing the detauiled class design other than `Employee` class.
 
 <details>
 <summary>3. GitHub Copilot Sample Response - `DepartmentTotal` class</summary>
+
 ### Detailed Class Design for `DepartmentTotal` Class
 
 Based on the design document and conversion criteria, here is the detailed class design for the `DepartmentTotal` class in Java:
