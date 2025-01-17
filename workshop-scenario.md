@@ -1747,3 +1747,11 @@ public class Employee {
 This detailed class design ensures that the `Employee` class is robust, maintainable, and leverages the object-oriented features of Java.
 
 </details>
+
+### (Option) Task 4: Java Class Detaild Design based on COBOL program
+
+Designing the detauiled class design other than `Employee` class.
+
+1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot same as `Employee` class.
