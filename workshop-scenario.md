@@ -8,7 +8,7 @@ This workshop is designed to help you understand the process of modernizing lega
 
 ### Task 1: Ask GitHub Copilot on GitHub Copilot Chat
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 2. Ask GitHub Copilot for the following:
 
     ```plaintext
@@ -189,7 +189,7 @@ By leveraging GitHub Copilot to automate these tasks, you can efficiently invent
 
 ### Task 3: Ask GitHub Copilot about Benefits of Code to Doc / Doc to Code
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -267,7 +267,7 @@ While automated conversion tools can be useful for quickly converting large code
 
 ### Task 4: Ask GitHub Copilot about the automatic conversion tool
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -336,7 +336,7 @@ While automatic conversion tools offer speed and efficiency, they come with trad
 
 ### Task 1: Analyze the Code Dependency
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -405,7 +405,7 @@ By ensuring these dependencies are met, the `main.cobc-1` program can execute su
 
 ### Task 2: Explain the code
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -636,7 +636,7 @@ This COBOL program is a payroll system that initializes employee data, sorts it,
 
 ### Task 3: Identify the Subroutines
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -860,7 +860,7 @@ Each subroutine builds upon the results of the previous ones, ensuring a structu
 
 ### Task 1: Ask GitHub Copilot to convert the code to Java
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -964,7 +964,7 @@ By following these steps, you can systematically migrate your COBOL program to J
 
 ### Task 2: Ask GitHub Copilot to convert the code to Python
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1064,7 +1064,7 @@ By following these steps, you can systematically migrate your COBOL program to P
 
 ### Task 1: Ask GitHub Copilot to create a design document template
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1142,7 +1142,7 @@ This template provides a comprehensive structure for documenting the design of y
 
 ### Task 2: Ask GitHub Copilot to create a design document
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1262,7 +1262,7 @@ This design document provides a comprehensive structure for documenting the desi
 
 ### Task 3: Ask GitHub Copilot to increase the readability of the code
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1475,7 +1475,7 @@ These comments should help increase the readability of the COBOL code and provid
 
 ### Task 1: Define the Class Conversion Criteria
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1526,7 +1526,7 @@ When reworking COBOL code into Java, several criteria should be considered for c
 
 ### Task 2: Ask GitHub Copilot to define the class design
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1564,7 +1564,7 @@ Similar code found with 1 license type
 
 ### Task 3: Java Class Detaild Design based on COBOL program
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot for the following:
 
@@ -1754,7 +1754,7 @@ This detailed class design ensures that the `Employee` class is robust, maintain
 
 Designing the detauiled class design other than `Employee` class.
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
 2. Ask GitHub Copilot same as `Employee` class.
 
@@ -2105,4 +2105,10 @@ This detailed class design ensures that the `BonusCalculator` class is robust, m
 
 Based on the design doc, ask GitHub Copilot to generate the Java code.
 
-1. Open Copilot Chat with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+
+2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+
+   ```plaintext
+   Based on design doc #file:employee-class.md, please propose Employee class as Java under java directory.
+   ```
