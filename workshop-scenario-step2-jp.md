@@ -1,53 +1,53 @@
-# Legacy Code Modernization Workshop
+# レガシーコードモダナイゼーションワークショップ
 
-## Step 2: Analyze the COBOL Code
+## ステップ2: COBOLコードの分析
 
-### Task 1: Analyze the Code Dependency
+### タスク1: コード依存関係の分析
 
-1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` で Copilot Chat を開きます。
 
-2. Ask GitHub Copilot for the following:
+2. GitHub Copilot に次の質問をします：
 
-   Target code is `main.cobc` in the `multiple-file` directory.
+   ターゲットコードは `multiple-file` ディレクトリ内の `main.cobc` です。
 
     ```plaintext
-    #file:main.cobc Analyze the dependencies required to execute this code.
+    #file:main.cobc このコードを実行するために必要な依存関係を分析してください。
     ```
 
 <details>
-<summary>3. GitHub Copilot Sample Response</summary>
-To analyze the dependencies required to execute the COBOL code in `main.cobc-1`, follow these steps:
+<summary>3. GitHub Copilot サンプルレスポンス</summary>
+`main.cobc-1` の COBOL コードを実行するために必要な依存関係を分析するには、次の手順に従います：
 
-### 1. **Internal Dependencies**:
-   - **Data Structures**: The code relies on various data structures defined in the `WORKING-STORAGE SECTION`.
-   - **Subroutines**: The `PROCEDURE DIVISION` contains several subroutines that are called within the `MAIN-PROCEDURE`.
+### 1. **内部依存関係**:
+   - **データ構造**: コードは `WORKING-STORAGE SECTION` で定義されたさまざまなデータ構造に依存しています。
+   - **サブルーチン**: `PROCEDURE DIVISION` には `MAIN-PROCEDURE` 内で呼び出されるいくつかのサブルーチンが含まれています。
 
-### 2. **External Dependencies**:
-   - **Called Programs**: The code calls an external COBOL program `CalculateBonus` using the `CALL` statement.
+### 2. **外部依存関係**:
+   - **呼び出されるプログラム**: コードは `CALL` ステートメントを使用して外部の COBOL プログラム `CalculateBonus` を呼び出します。
 
-### Detailed Analysis:
+### 詳細な分析:
 
-#### Internal Dependencies:
-1. **Data Structures**:
-   - `MAX-EMPLOYEES`: Defines the maximum number of employees.
-   - `EMPLOYEE-TABLE`: Stores employee details.
-   - `SORTED-EMPLOYEE-TABLE`: Stores sorted employee details.
-   - `DEPARTMENT-TOTALS`: Stores department-wise total salaries.
-   - Various other variables like `EMPLOYEE-INDEX`, `INNER-INDEX`, `TAX-RATE`, etc.
+#### 内部依存関係:
+1. **データ構造**:
+   - `MAX-EMPLOYEES`: 最大従業員数を定義します。
+   - `EMPLOYEE-TABLE`: 従業員の詳細を格納します。
+   - `SORTED-EMPLOYEE-TABLE`: ソートされた従業員の詳細を格納します。
+   - `DEPARTMENT-TOTALS`: 部門ごとの総給与を格納します。
+   - その他の変数として `EMPLOYEE-INDEX`, `INNER-INDEX`, `TAX-RATE` などがあります。
 
-2. **Subroutines**:
-   - `INITIALIZE-EMPLOYEES`: Initializes employee data.
-   - `SORT-EMPLOYEES`: Sorts employees based on their IDs.
-   - `CALCULATE-NET-SALARIES`: Calculates net salaries for employees.
-   - `CALCULATE-DEPARTMENT-TOTALS`: Calculates total salaries for each department.
-   - `DISPLAY-EMPLOYEES`: Displays employee payroll information.
-   - `DISPLAY-DEPARTMENT-TOTALS`: Displays department salary totals.
+2. **サブルーチン**:
+   - `INITIALIZE-EMPLOYEES`: 従業員データを初期化します。
+   - `SORT-EMPLOYEES`: 従業員をIDでソートします。
+   - `CALCULATE-NET-SALARIES`: 従業員の純給与を計算します。
+   - `CALCULATE-DEPARTMENT-TOTALS`: 各部門の総給与を計算します。
+   - `DISPLAY-EMPLOYEES`: 従業員の給与情報を表示します。
+   - `DISPLAY-DEPARTMENT-TOTALS`: 部門ごとの給与総額を表示します。
 
-#### External Dependencies:
-1. **Called Programs**:
-   - `CalculateBonus`: This program is called to calculate the bonus for each employee. The `CALL` statement in `CALCULATE-NET-SALARIES` subroutine indicates this dependency.
+#### 外部依存関係:
+1. **呼び出されるプログラム**:
+   - `CalculateBonus`: このプログラムは各従業員のボーナスを計算するために呼び出されます。`CALCULATE-NET-SALARIES` サブルーチン内の `CALL` ステートメントがこの依存関係を示しています。
 
-### Example of External Dependency:
+### 外部依存関係の例:
 ```cobol
 ...
        CALCULATE-NET-SALARIES.
@@ -62,44 +62,44 @@ To analyze the dependencies required to execute the COBOL code in `main.cobc-1`,
 ...
 ```
 
-### Summary:
-To execute the code in `main.cobc-1`, ensure the following dependencies are met:
-- All data structures and variables are correctly defined and initialized.
-- All internal subroutines (`INITIALIZE-EMPLOYEES`, `SORT-EMPLOYEES`, etc.) are implemented.
-- The external program `CalculateBonus` is available and correctly implemented.
+### まとめ:
+`main.cobc-1` のコードを実行するには、次の依存関係が満たされていることを確認してください：
+- すべてのデータ構造と変数が正しく定義および初期化されていること。
+- すべての内部サブルーチン（`INITIALIZE-EMPLOYEES`, `SORT-EMPLOYEES` など）が実装されていること。
+- 外部プログラム `CalculateBonus` が利用可能で正しく実装されていること。
 
-By ensuring these dependencies are met, the `main.cobc-1` program can execute successfully.
+これらの依存関係が満たされていることで、`main.cobc-1` プログラムは正常に実行できます。
 </details>
 
-### Task 2: Explain the code
+### タスク2: コードの説明
 
-1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` で Copilot Chat を開きます。
 
-2. Ask GitHub Copilot for the following:
+2. GitHub Copilot に次の質問をします：
 
-   Target code is `main.cobc` in the `multiple-file` directory.
+   ターゲットコードは `multiple-file` ディレクトリ内の `main.cobc` です。
 
     ```plaintext
-    @workspace /explain #file:main.cobc in detail.
+    @workspace /explain #file:main.cobc を詳細に説明してください。
     ```
 
 <details>
-<summary>3. GitHub Copilot Sample Response</summary>
-Sure, let's go through the provided COBOL code in detail.
+<summary>3. GitHub Copilot サンプルレスポンス</summary>
+提供された COBOL コードを詳細に見ていきましょう。
 
-### Identification Division
-This section identifies the program.
+### 識別部
+このセクションはプログラムを識別します。
 
 ```cobol
 IDENTIFICATION DIVISION.
        PROGRAM-ID. PayrollSystem.
 ```
 
-### Data Division
-This section defines the data structures and variables used in the program.
+### データ部
+このセクションはプログラムで使用されるデータ構造と変数を定義します。
 
-#### Working-Storage Section
-This section contains variables that are used throughout the program.
+#### 作業記憶セクション
+このセクションにはプログラム全体で使用される変数が含まれます。
 
 ```cobol
        DATA DIVISION.
@@ -107,10 +107,10 @@ This section contains variables that are used throughout the program.
        01  MAX-EMPLOYEES           PIC 9(3) VALUE 5.
 ```
 
-- `MAX-EMPLOYEES` is a numeric variable with a maximum value of 999, initialized to 5.
+- `MAX-EMPLOYEES` は最大値999の数値変数で、初期値は5です。
 
-#### Employee Table
-This table stores employee details.
+#### 従業員テーブル
+このテーブルは従業員の詳細を格納します。
 
 ```cobol
        01  EMPLOYEE-TABLE.
@@ -125,10 +125,10 @@ This table stores employee details.
                10  TAX-DEDUCTION      PIC 9(5)V99.
 ```
 
-- `EMPLOYEE-ENTRY` occurs 5 times, each entry containing details like `EMPLOYEE-ID`, `EMPLOYEE-NAME`, `DEPARTMENT`, `GROSS-SALARY`, `BONUS`, `DEDUCTIONS`, `NET-SALARY`, and `TAX-DEDUCTION`.
+- `EMPLOYEE-ENTRY` は5回繰り返され、それぞれのエントリには `EMPLOYEE-ID`, `EMPLOYEE-NAME`, `DEPARTMENT`, `GROSS-SALARY`, `BONUS`, `DEDUCTIONS`, `NET-SALARY`, `TAX-DEDUCTION` が含まれます。
 
-#### Sorted Employee Table
-This table stores sorted employee details.
+#### ソートされた従業員テーブル
+このテーブルはソートされた従業員の詳細を格納します。
 
 ```cobol
        01  SORTED-EMPLOYEE-TABLE.
@@ -143,10 +143,10 @@ This table stores sorted employee details.
                10  SORT-TAX-DEDUCTION PIC 9(5)V99.
 ```
 
-- Similar to `EMPLOYEE-TABLE`, but used for sorted data.
+- `EMPLOYEE-TABLE` と似ていますが、ソートされたデータ用です。
 
-#### Department Totals
-This table stores total salaries for each department.
+#### 部門合計
+このテーブルは各部門の総給与を格納します。
 
 ```cobol
        01  DEPARTMENT-TOTALS.
@@ -155,10 +155,10 @@ This table stores total salaries for each department.
                10  TOTAL-SALARY       PIC 9(7)V99.
 ```
 
-- `DEPARTMENT-TOTAL` occurs 5 times, each entry containing `DEPT-NAME` and `TOTAL-SALARY`.
+- `DEPARTMENT-TOTAL` は5回繰り返され、それぞれのエントリには `DEPT-NAME` と `TOTAL-SALARY` が含まれます。
 
-#### Additional Variables
-These variables are used for various calculations and temporary storage.
+#### 追加変数
+これらの変数はさまざまな計算や一時的な格納に使用されます。
 
 ```cobol
        01  EMPLOYEE-INDEX           PIC 9(3).
@@ -177,11 +177,11 @@ These variables are used for various calculations and temporary storage.
        01  LNK-BONUS                PIC 9(5)V99.
 ```
 
-### Procedure Division
-This section contains the executable code.
+### 手続き部
+このセクションには実行可能なコードが含まれます。
 
-#### Main Procedure
-The main entry point of the program.
+#### メイン手続き
+プログラムのメインエントリポイントです。
 
 ```cobol
        PROCEDURE DIVISION.
@@ -195,10 +195,10 @@ The main entry point of the program.
            STOP RUN.
 ```
 
-- Calls various sub-procedures to initialize, sort, calculate, and display data.
+- データの初期化、ソート、計算、表示を行うさまざまなサブルーチンを呼び出します。
 
-#### Initialize Employees
-Initializes the employee data.
+#### 従業員の初期化
+従業員データを初期化します。
 
 ```cobol
        INITIALIZE-EMPLOYEES.
@@ -213,10 +213,10 @@ Initializes the employee data.
            MOVE 75000.00 TO GROSS-SALARY(5).
 ```
 
-- Moves hardcoded values to the `EMPLOYEE-TABLE`.
+- ハードコードされた値を `EMPLOYEE-TABLE` に移動します。
 
-#### Sort Employees
-Sorts the employees by their IDs.
+#### 従業員のソート
+従業員をIDでソートします。
 
 ```cobol
        SORT-EMPLOYEES.
@@ -230,11 +230,11 @@ Sorts the employees by their IDs.
                END-PERFORM.
 ```
 
-- Copies data from `EMPLOYEE-TABLE` to `SORTED-EMPLOYEE-TABLE`.
-- Sorts the `SORTED-EMPLOYEE-TABLE` using a bubble sort algorithm.
+- `EMPLOYEE-TABLE` から `SORTED-EMPLOYEE-TABLE` にデータをコピーします。
+- バブルソートアルゴリズムを使用して `SORTED-EMPLOYEE-TABLE` をソートします。
 
-#### Calculate Net Salaries
-Calculates the net salary for each employee.
+#### 純給与の計算
+各従業員の純給与を計算します。
 
 ```cobol
        CALCULATE-NET-SALARIES.
@@ -246,11 +246,11 @@ Calculates the net salary for each employee.
            END-PERFORM.
 ```
 
-- Uses a subroutine `CalculateBonus` to compute bonuses.
-- Computes deductions, tax, and net salary.
+- `CalculateBonus` サブルーチンを使用してボーナスを計算します。
+- 控除、税金、純給与を計算します。
 
-#### Calculate Department Totals
-Calculates total salaries for each department.
+#### 部門合計の計算
+各部門の総給与を計算します。
 
 ```cobol
        CALCULATE-DEPARTMENT-TOTALS.
@@ -264,11 +264,11 @@ Calculates total salaries for each department.
                END-PERFORM.
 ```
 
-- Initializes department totals.
-- Aggregates net salaries by department.
+- 部門合計を初期化します。
+- 部門ごとに純給与を集計します。
 
-#### Display Employees
-Displays employee details.
+#### 従業員の表示
+従業員の詳細を表示します。
 
 ```cobol
        DISPLAY-EMPLOYEES.
@@ -280,10 +280,10 @@ Displays employee details.
            END-PERFORM.
 ```
 
-- Displays sorted employee details.
+- ソートされた従業員の詳細を表示します。
 
-#### Display Department Totals
-Displays total salaries for each department.
+#### 部門合計の表示
+各部門の総給与を表示します。
 
 ```cobol
        DISPLAY-DEPARTMENT-TOTALS.
@@ -297,68 +297,68 @@ Displays total salaries for each department.
            END-PERFORM.
 ```
 
-- Displays department totals if the department name is not empty.
+- 部門名が空でない場合に部門合計を表示します。
 
-This COBOL program is a payroll system that initializes employee data, sorts it, calculates net salaries, aggregates department totals, and displays the results.
+この COBOL プログラムは、従業員データを初期化し、ソートし、純給与を計算し、部門合計を集計し、結果を表示する給与システムです。
 </details>
 
-### Task 3: Identify the Subroutines
+### タスク3: サブルーチンの特定
 
-1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` で Copilot Chat を開きます。
 
-2. Ask GitHub Copilot for the following:
+2. GitHub Copilot に次の質問をします：
 
-   Target code is `main.cobc` in the `multiple-file` directory.
+   ターゲットコードは `multiple-file` ディレクトリ内の `main.cobc` です。
 
     ```plaintext
-    #file:main.cobc What are the subroutines defined in this code?
+    #file:main.cobc このコードで定義されているサブルーチンは何ですか？
     ```
 
 <details>
-<summary>3. GitHub Copilot Sample Response</summary>
-The subroutines defined in the main.cobc code are:
+<summary>3. GitHub Copilot サンプルレスポンス</summary>
+main.cobc コードで定義されているサブルーチンは次のとおりです：
 
 1. **MAIN-PROCEDURE**
-   - This is the main entry point of the program and calls other subroutines in sequence.
+   - プログラムのメインエントリポイントであり、他のサブルーチンを順番に呼び出します。
 
 2. **INITIALIZE-EMPLOYEES**
-   - Initializes the employee data with hardcoded values.
+   - ハードコードされた値で従業員データを初期化します。
 
 3. **SORT-EMPLOYEES**
-   - Sorts the employees based on their IDs using a bubble sort algorithm.
+   - バブルソートアルゴリズムを使用して従業員をIDでソートします。
 
 4. **CALCULATE-NET-SALARIES**
-   - Calculates the net salaries for employees by calling the `CalculateBonus` program and computing deductions and tax.
+   - `CalculateBonus` プログラムを呼び出してボーナスを計算し、控除と税金を計算して純給与を算出します。
 
 5. **CALCULATE-DEPARTMENT-TOTALS**
-   - Calculates total salaries for each department by aggregating net salaries.
+   - 純給与を集計して各部門の総給与を計算します。
 
 6. **DISPLAY-EMPLOYEES**
-   - Displays the sorted employee details.
+   - ソートされた従業員の詳細を表示します。
 
 7. **DISPLAY-DEPARTMENT-TOTALS**
-   - Displays the total salaries for each department.
+   - 各部門の総給与を表示します。
 
-These subroutines are called in sequence from the `MAIN-PROCEDURE` to perform the various tasks required by the payroll system.
+これらのサブルーチンは、給与システムが必要とするさまざまなタスクを実行するために `MAIN-PROCEDURE` から順番に呼び出されます。
 </details>
 
-4. Ask GitHub Copilot for the following:
+4. GitHub Copilot に次の質問をします：
 
-   Target code is `main.cobc` in the `multiple-file` directory.
+   ターゲットコードは `multiple-file` ディレクトリ内の `main.cobc` です。
 
     ```plaintext
-    Explain each subrouines for #file:main.cobc in detail and explain the relationship of each subroutines among subroutines.
+    各サブルーチンを詳細に説明し、サブルーチン間の関係を説明してください。 #file:main.cobc
     ```
 <details>
-<summary>5. GitHub Copilot Sample Response</summary>
-Sure, let's explain each subroutine in detail and their relationships in the main.cobc file.
+<summary>5. GitHub Copilot サンプルレスポンス</summary>
+もちろん、main.cobc ファイルの各サブルーチンを詳細に説明し、それらの関係を説明します。
 
-### Subroutines in main.cobc
+### main.cobc のサブルーチン
 
 1. **MAIN-PROCEDURE**
-   - **Purpose**: This is the main entry point of the program. It orchestrates the execution of other subroutines.
-   - **Details**: It sequentially calls the subroutines to initialize data, sort employees, calculate net salaries, calculate department totals, and display the results.
-   - **Code**:
+   - **目的**: プログラムのメインエントリポイントです。他のサブルーチンの実行を調整します。
+   - **詳細**: データの初期化、従業員のソート、純給与の計算、部門合計の計算、結果の表示を順番に行うサブルーチンを呼び出します。
+   - **コード**:
      ```cobol
      MAIN-PROCEDURE.
          PERFORM INITIALIZE-EMPLOYEES.
@@ -371,9 +371,9 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
      ```
 
 2. **INITIALIZE-EMPLOYEES**
-   - **Purpose**: Initializes the employee data with hardcoded values.
-   - **Details**: Moves predefined values into the `EMPLOYEE-TABLE`.
-   - **Code**:
+   - **目的**: ハードコードされた値で従業員データを初期化します。
+   - **詳細**: 事前定義された値を `EMPLOYEE-TABLE` に移動します。
+   - **コード**:
      ```cobol
      INITIALIZE-EMPLOYEES.
          MOVE "E001" TO EMPLOYEE-ID(1).
@@ -388,9 +388,9 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
      ```
 
 3. **SORT-EMPLOYEES**
-   - **Purpose**: Sorts the employees based on their IDs.
-   - **Details**: Copies data from `EMPLOYEE-TABLE` to `SORTED-EMPLOYEE-TABLE` and sorts it using a bubble sort algorithm.
-   - **Code**:
+   - **目的**: 従業員をIDでソートします。
+   - **詳細**: `EMPLOYEE-TABLE` から `SORTED-EMPLOYEE-TABLE` にデータをコピーし、バブルソートアルゴリズムを使用してソートします。
+   - **コード**:
      ```cobol
      SORT-EMPLOYEES.
          PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
@@ -421,9 +421,9 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
      ```
 
 4. **CALCULATE-NET-SALARIES**
-   - **Purpose**: Calculates the net salaries for employees.
-   - **Details**: Calls the `CalculateBonus` program to compute bonuses and then calculates deductions, tax, and net salary.
-   - **Code**:
+   - **目的**: 従業員の純給与を計算します。
+   - **詳細**: `CalculateBonus` プログラムを呼び出してボーナスを計算し、控除、税金、純給与を計算します。
+   - **コード**:
      ```cobol
      CALCULATE-NET-SALARIES.
          PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
@@ -437,9 +437,9 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
      ```
 
 5. **CALCULATE-DEPARTMENT-TOTALS**
-   - **Purpose**: Calculates total salaries for each department.
-   - **Details**: Initializes department totals and aggregates net salaries by department.
-   - **Code**:
+   - **目的**: 各部門の総給与を計算します。
+   - **詳細**: 部門合計を初期化し、純給与を部門ごとに集計します。
+   - **コード**:
      ```cobol
      CALCULATE-DEPARTMENT-TOTALS.
          PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
@@ -461,9 +461,9 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
      ```
 
 6. **DISPLAY-EMPLOYEES**
-   - **Purpose**: Displays the sorted employee details.
-   - **Details**: Iterates through the sorted employee table and displays each employee's details.
-   - **Code**:
+   - **目的**: ソートされた従業員の詳細を表示します。
+   - **詳細**: ソートされた従業員テーブルを反復処理し、各従業員の詳細を表示します。
+   - **コード**:
      ```cobol
      DISPLAY-EMPLOYEES.
          DISPLAY "Employee Payroll Information".
@@ -482,9 +482,9 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
      ```
 
 7. **DISPLAY-DEPARTMENT-TOTALS**
-   - **Purpose**: Displays the total salaries for each department.
-   - **Details**: Iterates through the department totals and displays each department's total salary.
-   - **Code**:
+   - **目的**: 各部門の総給与を表示します。
+   - **詳細**: 部門合計を反復処理し、各部門の総給与を表示します。
+   - **コード**:
      ```cobol
      DISPLAY-DEPARTMENT-TOTALS.
          DISPLAY "Department Salary Totals".
@@ -498,28 +498,28 @@ Sure, let's explain each subroutine in detail and their relationships in the mai
          END-PERFORM.
      ```
 
-### Relationship Among Subroutines
+### サブルーチン間の関係
 
 1. **MAIN-PROCEDURE**:
-   - Acts as the controller, calling each subroutine in sequence to perform the overall task of the payroll system.
+   - コントローラーとして機能し、給与システムの全体的なタスクを実行するために各サブルーチンを順番に呼び出します。
 
 2. **INITIALIZE-EMPLOYEES**:
-   - Sets up the initial data required for further processing.
+   - さらなる処理に必要な初期データを設定します。
 
 3. **SORT-EMPLOYEES**:
-   - Organizes the employee data to facilitate easier calculations and display.
+   - データを整理し、計算や表示を容易にします。
 
 4. **CALCULATE-NET-SALARIES**:
-   - Uses the sorted data to compute net salaries, which are necessary for department totals and display.
+   - ソートされたデータを使用して純給与を計算し、部門合計や表示に必要なデータを提供します。
 
 5. **CALCULATE-DEPARTMENT-TOTALS**:
-   - Aggregates the net salaries calculated in the previous step to provide department-wise totals.
+   - 純給与を集計して部門ごとの総給与を提供します。
 
 6. **DISPLAY-EMPLOYEES**:
-   - Uses the sorted and calculated data to display individual employee details.
+   - ソートおよび計算されたデータを使用して個々の従業員の詳細を表示します。
 
 7. **DISPLAY-DEPARTMENT-TOTALS**:
-   - Uses the aggregated department totals to display overall department salary information.
+   - 集計された部門合計を使用して全体の部門給与情報を表示します。
 
-Each subroutine builds upon the results of the previous ones, ensuring a structured and logical flow of data processing and display in the payroll system.
+各サブルーチンは前のサブルーチンの結果を基に構築され、給与システム内のデータ処理と表示の構造化された論理的なフローを確保します。
 </details>
