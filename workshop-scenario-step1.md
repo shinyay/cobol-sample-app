@@ -327,3 +327,98 @@ Using an automatic conversion tool to migrate COBOL code to another language has
 ### Conclusion
 While automatic conversion tools offer speed and efficiency, they come with trade-offs in terms of code quality, customization, and maintainability. Manual migration with tools like GitHub Copilot provides greater control and flexibility, ensuring a more robust and maintainable codebase. The choice between the two approaches depends on the specific requirements, resources, and goals of the migration project.
 </details>
+
+### Task 5: Key COBOL Terminology that You should know
+
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+    ```plaintext
+    I recognize that COBOL has a number of technical terms that are unique to COBOL, such as subroutines, copy clauses, and so on. As you consider converting COBOL to another language, please list the terminology you need to know and explain each one.
+    ```
+<details>
+<summary>3. GitHub Copilot Sample Response</summary>
+Certainly! Here is a list of key COBOL terminology that you should know when considering converting COBOL to another language, along with explanations for each term:
+
+### 1. **IDENTIFICATION DIVISION**
+   - This section contains the program's identification information, such as the program name, author, and date.
+
+### 2. **ENVIRONMENT DIVISION**
+   - This section describes the environment in which the program runs, including file assignments and external device specifications.
+
+### 3. **DATA DIVISION**
+   - This section defines the data used by the program. It is divided into several sections:
+     - **WORKING-STORAGE SECTION**: Defines variables used within the program.
+     - **FILE SECTION**: Defines the layout of records in files.
+     - **LINKAGE SECTION**: Defines data passed to the program from external programs.
+
+### 4. **PROCEDURE DIVISION**
+   - This section contains the program's logic and procedures. It includes the actual code that performs the program's operations.
+
+### 5. **COPYBOOK**
+   - A reusable piece of code defined in a separate file. It is included in the program using the `COPY` statement.
+
+### 6. **PERFORM**
+   - A statement used to execute subroutines or loops. It is used to repeat specific operations.
+
+### 7. **CALL**
+   - A statement used to call external programs or subroutines, passing arguments to them.
+
+### 8. **SECTION**
+   - A logical grouping of related statements within the PROCEDURE DIVISION.
+
+### 9. **PARAGRAPH**
+   - A smaller unit within a SECTION, grouping a series of statements that perform a specific task.
+
+### 10. **PIC (PICTURE)**
+   - A clause that defines the format of a data item, specifying its type and size.
+     - Example: `PIC 9(5)` represents a numeric field with 5 digits.
+
+### 11. **OCCURS**
+   - A clause used to define arrays, indicating that a data item repeats a specified number of times.
+
+### 12. **VALUE**
+   - A clause used to set the initial value of a data item.
+
+### 13. **COMPUTE**
+   - A statement used to perform arithmetic operations and store the result in a variable.
+
+### 14. **IF**
+   - A statement used for conditional branching, executing different code based on specified conditions.
+
+### 15. **MOVE**
+   - A statement used to copy data from one variable to another.
+
+### 16. **STOP RUN**
+   - A statement used to terminate the program's execution.
+
+### 17. **DISPLAY**
+   - A statement used to output messages or data to the screen.
+
+### 18. **ACCEPT**
+   - A statement used to receive input from the user.
+
+### 19. **SORT**
+   - A statement used to sort data in a specified order.
+
+### 20. **SEARCH**
+   - A statement used to search for specific elements within an array.
+
+### 21. **SUBROUTINE**
+   - A reusable block of code that can be called from different parts of the program. In COBOL, subroutines are often implemented using the `PERFORM` or `CALL` statements.
+
+### 22. **COPY Clause**
+   - A clause used to include the contents of a copybook into the program. This promotes code reuse and modularity.
+
+### 23. **LEVEL NUMBERS**
+   - Numbers used to define the hierarchical structure of data items. Common level numbers include 01, 05, 10, etc.
+
+### 24. **REDEFINES**
+   - A clause used to allow different data descriptions for the same storage area, enabling multiple views of the same data.
+
+### 25. **88 LEVEL**
+   - A special level number used to define condition names, which are used for readability and to simplify conditional logic.
+
+Understanding these terms will help you effectively convert COBOL programs to another language by providing insight into the structure and functionality of COBOL code. Each term represents a fundamental concept or construct in COBOL programming, and knowing how they translate to constructs in the target language is crucial for a successful conversion.
+</details>
