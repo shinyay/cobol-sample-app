@@ -346,3 +346,95 @@ GitHub Copilot は、COBOL から Java への移行プロセスの各ステッ�
    そこで、COBOL から Python への移行手順について教えてください。
    ```
 
+<details>
+<summary>3. GitHub Copilotのサンプル回答</summary>
+COBOL から Python への移行手順について、以下のステップを踏むことをお勧めします。これらのステップは、COBOL の概念を Python に適切にマッピングし、移行プロセスをスムーズに進めるためのものです。
+
+### 1. プロジェクトの計画と準備
+
+- **コードベースのインベントリ**:
+  - すべての COBOL プログラム、コピー句、外部依存関係を特定し、ドキュメント化します。
+
+- **移行の範囲と目標の設定**:
+  - 移行するコードの範囲を決定し、移行の目標（例：パフォーマンスの向上、保守性の向上）を設定します。
+
+### 2. COBOL の概念を Python にマッピング
+
+- **プログラム構造**:
+  - COBOL の各プログラムを Python のクラスまたはモジュールにマッピングします。COBOL の `IDENTIFICATION DIVISION` は Python のクラス定義に相当します。
+
+- **データ定義**:
+  - COBOL の `DATA DIVISION` に定義されたデータ項目を Python のデータクラスや辞書に変換します。COBOL のデータ型を Python のデータ型にマッピングします。
+
+- **サブルーチン**:
+  - COBOL のサブルーチン（`PERFORM` や `CALL` ステートメント）を Python の関数やメソッドに変換します。サブルーチンの引数は関数のパラメータとして扱います。
+
+- **COPYBOOK**:
+  - COBOL のコピー句（COPYBOOK）は、Python のモジュールやクラスとして再利用可能なコードに変換します。
+
+### 3. 移行の実装
+
+- **クラスの作成**:
+  - 各 COBOL プログラムに対応する Python クラスまたはモジュールを作成します。クラス名やモジュール名はプログラム名に基づいて命名します。
+
+- **フィールドの定義**:
+  - COBOL のデータ項目を Python のデータクラスや辞書として定義します。データ型の変換を行います（例：`PIC 9(3)` は `int` に変換）。
+
+- **メソッドの実装**:
+  - COBOL のサブルーチンを Python の関数やメソッドとして実装します。メソッド名はサブルーチン名に基づいて命名します。
+
+- **外部プログラムの呼び出し**:
+  - COBOL の外部プログラム呼び出し（`CALL` ステートメント）を Python の関数呼び出しに変換します。
+
+### 4. テストと検証
+
+- **単体テストの作成**:
+  - 各 Python クラスと関数に対して単体テストを作成し、正しく動作することを確認します。
+
+- **統合テストの実施**:
+  - 移行された Python コード全体を統合テストし、システム全体が正しく動作することを確認します。
+
+### 5. 最適化とリファクタリング
+
+- **コードの最適化**:
+  - 移行された Python コードを最適化し、パフォーマンスを向上させます。
+
+- **リファクタリング**:
+  - コードの可読性と保守性を向上させるために、リファクタリングを行います。
+
+### 具体的な例
+
+#### COBOL のサブルーチンの Python への変換例
+
+**COBOL サブルーチン**
+```cobol
+INITIALIZE-EMPLOYEES.
+    MOVE "E001" TO EMPLOYEE-ID(1).
+    MOVE "Alice Johnson" TO EMPLOYEE-NAME(1).
+    MOVE "HR" TO DEPARTMENT(1).
+    MOVE 70000.00 TO GROSS-SALARY(1).
+    ...
+```
+
+**Python 関数**
+```python
+from dataclasses import dataclass
+
+@dataclass
+class Employee:
+    id: str
+    name: str
+    department: str
+    gross_salary: float
+
+employees = []
+
+def initialize_employees():
+    employees.append(Employee("E001", "Alice Johnson", "HR", 70000.00))
+    # Initialize other employees
+```
+
+### まとめ
+
+COBOL から Python への移行は、プログラム構造、データ定義、サブルーチン、コピー句などの COBOL の概念を Python に適切にマッピングすることが重要です。移行プロセスを計画し、各ステップを慎重に実行することで、スムーズな移行を実現できます。
+</details>
