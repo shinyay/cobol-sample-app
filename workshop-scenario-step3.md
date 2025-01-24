@@ -143,7 +143,18 @@ class Employee {
 Migrating from COBOL to Java requires careful planning and execution. By mapping COBOL concepts to Java, creating corresponding classes and methods, and thoroughly testing the migrated code, you can ensure a successful migration. Each step should be carefully documented and validated to maintain the integrity and functionality of the original COBOL program.
 </details>
 
-### Task 2: Ask GitHub Copilot to convert the code to Python
+### Task 2: The use of GitHub Copilot in the conversion process
+
+1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+
+2. Ask GitHub Copilot for the following:
+
+   ```plaintext
+   I have reviewed the COBOL to Java migration steps. Now tell us how GitHub Copilot can help us in each of these steps.
+   ```
+<details>
+
+### Task 3: Ask GitHub Copilot to convert the code to Python
 
 1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
 
