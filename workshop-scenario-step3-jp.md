@@ -128,6 +128,212 @@ COBOL から Java への移行は、プログラム構造、データ定義、�
    COBOL から Java への移行手順について確認ができました。 それでは、それぞれの移行手順の中で GitHub Copilot がどのように役立つことができるか教えてください。
    ```
 
+<details>
+<summary>3. GitHub Copilotのサンプル回答</summary>
+GitHub Copilot は、COBOL から Java への移行手順の各ステップでさまざまな方法で役立つことができます。以下に、各移行手順において GitHub Copilot がどのように支援できるかを説明します。
+
+### 1. プロジェクトの計画と準備
+
+- **コードベースのインベントリ**:
+  - GitHub Copilot は、スクリプトを生成して COBOL ファイルのリストを取得し、コード行数やファイルサイズを計算するのに役立ちます。
+
+  ```python
+  import os
+
+  def list_cobol_files(directory):
+      cobol_files = []
+      for root, _, files in os.walk(directory):
+          for file in files:
+              if file.endswith(('.cbl', '.cob')):
+                  cobol_files.append(os.path.join(root, file))
+      return cobol_files
+
+  directory_path = '/path/to/cobol/project'
+  cobol_files = list_cobol_files(directory_path)
+  for file in cobol_files:
+      print(file)
+  ```
+
+- **移行の範囲と目標の設定**:
+  - GitHub Copilot は、移行計画のドキュメントテンプレートを生成するのに役立ちます。
+
+  ```markdown
+  # Migration Plan
+
+  ## Scope
+  - List of COBOL programs to be migrated
+  - Dependencies and external systems
+
+  ## Goals
+  - Improve performance
+  - Enhance maintainability
+  - Reduce technical debt
+
+  ## Timeline
+  - Phase 1: Inventory and Analysis
+  - Phase 2: Code Conversion
+  - Phase 3: Testing and Validation
+  - Phase 4: Optimization and Refactoring
+  ```
+
+### 2. COBOL の概念を Java にマッピング
+
+- **プログラム構造**:
+  - GitHub Copilot は、COBOL プログラムを Java クラスに変換するためのテンプレートを生成するのに役立ちます。
+
+  ```java
+  public class PayrollSystem {
+      // Fields and methods will be added here
+  }
+  ```
+
+- **データ定義**:
+  - GitHub Copilot は、COBOL のデータ項目を Java のフィールドに変換するコードを生成するのに役立ちます。
+
+  ```java
+  public class Employee {
+      private String id;
+      private String name;
+      private String department;
+      private double grossSalary;
+
+      // Constructor, getters, and setters
+  }
+  ```
+
+- **サブルーチン**:
+  - GitHub Copilot は、COBOL のサブルーチンを Java のメソッドに変換するコードを生成するのに役立ちます。
+
+  ```java
+  public void initializeEmployees() {
+      employees[0] = new Employee("E001", "Alice Johnson", "HR", 70000.00);
+      // Initialize other employees
+  }
+  ```
+
+- **COPYBOOK**:
+  - GitHub Copilot は、COBOL のコピー句を Java のクラスやインターフェースに変換するコードを生成するのに役立ちます。
+
+  ```java
+  public class EmployeeData {
+      // Fields and methods for reusable data structures
+  }
+  ```
+
+### 3. 移行の実装
+
+- **クラスの作成**:
+  - GitHub Copilot は、COBOL プログラムに対応する Java クラスを作成するコードを生成するのに役立ちます。
+
+  ```java
+  public class PayrollSystem {
+      private Employee[] employees = new Employee[5];
+
+      // Methods will be added here
+  }
+  ```
+
+- **フィールドの定義**:
+  - GitHub Copilot は、COBOL のデータ項目を Java のフィールドに変換するコードを生成するのに役立ちます。
+
+  ```java
+  private int employeeIndex;
+  private double taxRate = 0.20;
+  private double bonusRate = 0.10;
+  private double deductionRate = 0.05;
+  ```
+
+- **メソッドの実装**:
+  - GitHub Copilot は、COBOL のサブルーチンを Java のメソッドに変換するコードを生成するのに役立ちます。
+
+  ```java
+  public void calculateNetSalaries() {
+      for (Employee employee : employees) {
+          double bonus = calculateBonus(employee.getGrossSalary());
+          double netSalary = employee.getGrossSalary() + bonus - (employee.getGrossSalary() * taxRate) - (employee.getGrossSalary() * deductionRate);
+          employee.setNetSalary(netSalary);
+      }
+  }
+
+  private double calculateBonus(double grossSalary) {
+      return grossSalary * bonusRate;
+  }
+  ```
+
+- **外部プログラムの呼び出し**:
+  - GitHub Copilot は、COBOL の外部プログラム呼び出しを Java のメソッド呼び出しに変換するコードを生成するのに役立ちます。
+
+  ```java
+  public void callCalculateBonus(double grossSalary, double[] bonus) {
+      bonus[0] = calculateBonus(grossSalary);
+  }
+  ```
+
+### 4. テストと検証
+
+- **単体テストの作成**:
+  - GitHub Copilot は、各 Java クラスとメソッドに対する単体テストを生成するのに役立ちます。
+
+  ```java
+  @Test
+  public void testInitializeEmployees() {
+      PayrollSystem payrollSystem = new PayrollSystem();
+      payrollSystem.initializeEmployees();
+      assertEquals("E001", payrollSystem.getEmployees()[0].getId());
+  }
+  ```
+
+- **統合テストの実施**:
+  - GitHub Copilot は、統合テストのテンプレートを生成するのに役立ちます。
+
+  ```java
+  @Test
+  public void testPayrollSystemIntegration() {
+      PayrollSystem payrollSystem = new PayrollSystem();
+      payrollSystem.initializeEmployees();
+      payrollSystem.calculateNetSalaries();
+      payrollSystem.calculateDepartmentTotals();
+      payrollSystem.displayEmployees();
+      payrollSystem.displayDepartmentTotals();
+  }
+  ```
+
+### 5. 最適化とリファクタリング
+
+- **コードの最適化**:
+  - GitHub Copilot は、パフォーマンスを向上させるためのコード最適化の提案を行うのに役立ちます。
+
+  ```java
+  public void optimizeNetSalaryCalculation() {
+      for (Employee employee : employees) {
+          double grossSalary = employee.getGrossSalary();
+          double bonus = calculateBonus(grossSalary);
+          double netSalary = grossSalary + bonus - (grossSalary * taxRate) - (grossSalary * deductionRate);
+          employee.setNetSalary(netSalary);
+      }
+  }
+  ```
+
+- **リファクタリング**:
+  - GitHub Copilot は、コードの可読性と保守性を向上させるためのリファクタリングの提案を行うのに役立ちます。
+
+  ```java
+  public class Employee {
+      private String id;
+      private String name;
+      private String department;
+      private double grossSalary;
+      private double netSalary;
+
+      // Constructor, getters, and setters
+  }
+  ```
+
+### まとめ
+
+GitHub Copilot は、COBOL から Java への移行プロセスの各ステップで支援することができます。コードの生成、最適化、リファクタリング、テストの作成など、さまざまなタスクを効率的に行うための提案を提供し、移行プロジェクトをスムーズに進めることができます。
+</details>
+
 ### タスク3: GitHub CopilotにコードをPythonに変換するよう依頼する
 
 1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilot Chatを開きます。
