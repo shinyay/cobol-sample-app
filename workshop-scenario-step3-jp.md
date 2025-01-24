@@ -118,7 +118,17 @@ class Employee {
 COBOL から Java への移行は、プログラム構造、データ定義、サブルーチン、コピー句などの COBOL の概念を Java に適切にマッピングすることが重要です。移行プロセスを計画し、各ステップを慎重に実行することで、スムーズな移行を実現できます。
 </details>
 
-### タスク2: GitHub CopilotにコードをPythonに変換するよう依頼する
+### タスク2: 変換作業における GitHub Copilot の活用について確認する
+
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilot Chatを開きます。
+
+2. GitHub Copilotに次のように依頼します:
+
+   ```plaintext
+   COBOL から Java への移行手順について確認ができました。 それでは、それぞれの移行手順の中で GitHub Copilot がどのように役立つことができるか教えてください。
+   ```
+
+### タスク3: GitHub CopilotにコードをPythonに変換するよう依頼する
 
 1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilot Chatを開きます。
 
