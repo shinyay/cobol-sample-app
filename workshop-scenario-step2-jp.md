@@ -374,7 +374,7 @@ IDENTIFICATION DIVISION.
    ターゲットコードは `multiple-file` ディレクトリ内のコードです。
 
     ```plaintext
-    各サブルーチン間の関係を詳細に説明し、それらのシーケンスについて説明をしてください。
+    #file:main.cobc #file:calculate_bonus.cobc 各サブルーチン間の関係を詳細に説明し、それらのシーケンスについて説明をしてください。
     ```
 <details>
 <summary>5. GitHub Copilot サンプルレスポンス</summary>
