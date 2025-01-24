@@ -153,6 +153,210 @@ Migrating from COBOL to Java requires careful planning and execution. By mapping
    I have reviewed the COBOL to Java migration steps. Now tell us how GitHub Copilot can help us in each of these steps.
    ```
 <details>
+<summary>3. GitHub Copilot Sample Response</summary>
+GitHub Copilot can assist in various ways during each step of the COBOL to Java migration process. Here’s how it can help:
+
+### 1. Project Planning and Preparation
+
+- **Inventory of Codebase**:
+  - GitHub Copilot can generate scripts to list COBOL files and calculate code metrics such as lines of code and file sizes.
+
+  ```python
+  import os
+
+  def list_cobol_files(directory):
+      cobol_files = []
+      for root, _, files in os.walk(directory):
+          for file in files:
+              if file.endswith(('.cbl', '.cob')):
+                  cobol_files.append(os.path.join(root, file))
+      return cobol_files
+
+  directory_path = '/path/to/cobol/project'
+  cobol_files = list_cobol_files(directory_path)
+  for file in cobol_files:
+      print(file)
+  ```
+
+- **Define Scope and Goals**:
+  - GitHub Copilot can help generate a migration plan document template.
+
+  ```markdown
+  # Migration Plan
+
+  ## Scope
+  - List of COBOL programs to be migrated
+  - Dependencies and external systems
+
+  ## Goals
+  - Improve performance
+  - Enhance maintainability
+  - Reduce technical debt
+
+  ## Timeline
+  - Phase 1: Inventory and Analysis
+  - Phase 2: Code Conversion
+  - Phase 3: Testing and Validation
+  - Phase 4: Optimization and Refactoring
+  ```
+
+### 2. Mapping COBOL Concepts to Java
+
+- **Program Structure**:
+  - GitHub Copilot can generate templates for Java classes corresponding to COBOL programs.
+
+  ```java
+  public class PayrollSystem {
+      // Fields and methods will be added here
+  }
+  ```
+
+- **Data Definitions**:
+  - GitHub Copilot can convert COBOL data items to Java fields.
+
+  ```java
+  public class Employee {
+      private String id;
+      private String name;
+      private String department;
+      private double grossSalary;
+
+      // Constructor, getters, and setters
+  }
+  ```
+
+- **Subroutines**:
+  - GitHub Copilot can convert COBOL subroutines to Java methods.
+
+  ```java
+  public void initializeEmployees() {
+      employees[0] = new Employee("E001", "Alice Johnson", "HR", 70000.00);
+      // Initialize other employees
+  }
+  ```
+
+- **COPYBOOK**:
+  - GitHub Copilot can convert COBOL copybooks to reusable Java classes or interfaces.
+
+  ```java
+  public class EmployeeData {
+      // Fields and methods for reusable data structures
+  }
+  ```
+
+### 3. Implementation of Migration
+
+- **Create Classes**:
+  - GitHub Copilot can generate Java classes for each COBOL program.
+
+  ```java
+  public class PayrollSystem {
+      private Employee[] employees = new Employee[5];
+
+      // Methods will be added here
+  }
+  ```
+
+- **Define Fields**:
+  - GitHub Copilot can convert COBOL data items to Java fields.
+
+  ```java
+  private int employeeIndex;
+  private double taxRate = 0.20;
+  private double bonusRate = 0.10;
+  private double deductionRate = 0.05;
+  ```
+
+- **Implement Methods**:
+  - GitHub Copilot can convert COBOL subroutines to Java methods.
+
+  ```java
+  public void calculateNetSalaries() {
+      for (Employee employee : employees) {
+          double bonus = calculateBonus(employee.getGrossSalary());
+          double netSalary = employee.getGrossSalary() + bonus - (employee.getGrossSalary() * taxRate) - (employee.getGrossSalary() * deductionRate);
+          employee.setNetSalary(netSalary);
+      }
+  }
+
+  private double calculateBonus(double grossSalary) {
+      return grossSalary * bonusRate;
+  }
+  ```
+
+- **External Program Calls**:
+  - GitHub Copilot can convert COBOL external program calls to Java method calls.
+
+  ```java
+  public void callCalculateBonus(double grossSalary, double[] bonus) {
+      bonus[0] = calculateBonus(grossSalary);
+  }
+  ```
+
+### 4. Testing and Validation
+
+- **Create Unit Tests**:
+  - GitHub Copilot can generate unit tests for each Java class and method.
+
+  ```java
+  @Test
+  public void testInitializeEmployees() {
+      PayrollSystem payrollSystem = new PayrollSystem();
+      payrollSystem.initializeEmployees();
+      assertEquals("E001", payrollSystem.getEmployees()[0].getId());
+  }
+  ```
+
+- **Perform Integration Testing**:
+  - GitHub Copilot can generate templates for integration tests.
+
+  ```java
+  @Test
+  public void testPayrollSystemIntegration() {
+      PayrollSystem payrollSystem = new PayrollSystem();
+      payrollSystem.initializeEmployees();
+      payrollSystem.calculateNetSalaries();
+      payrollSystem.calculateDepartmentTotals();
+      payrollSystem.displayEmployees();
+      payrollSystem.displayDepartmentTotals();
+  }
+  ```
+
+### 5. Optimization and Refactoring
+
+- **Optimize Code**:
+  - GitHub Copilot can suggest code optimizations to improve performance.
+
+  ```java
+  public void optimizeNetSalaryCalculation() {
+      for (Employee employee : employees) {
+          double grossSalary = employee.getGrossSalary();
+          double bonus = calculateBonus(grossSalary);
+          double netSalary = grossSalary + bonus - (grossSalary * taxRate) - (grossSalary * deductionRate);
+          employee.setNetSalary(netSalary);
+      }
+  }
+  ```
+
+- **Refactor Code**:
+  - GitHub Copilot can suggest refactoring to improve code readability and maintainability.
+
+  ```java
+  public class Employee {
+      private String id;
+      private String name;
+      private String department;
+      private double grossSalary;
+      private double netSalary;
+
+      // Constructor, getters, and setters
+  }
+  ```
+
+### Conclusion
+
+GitHub Copilot can assist in each step of the COBOL to Java migration process by generating code, suggesting optimizations, refactoring, and creating tests. This helps streamline the migration project and ensures a smooth transition from COBOL to Java.
+</details>
 
 ### Task 3: Ask GitHub Copilot to convert the code to Python
 
