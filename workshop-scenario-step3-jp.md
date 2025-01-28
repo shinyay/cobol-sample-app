@@ -334,7 +334,13 @@ GitHub Copilot は、COBOL から Java への移行手順の各ステップで�
 GitHub Copilot は、COBOL から Java への移行プロセスの各ステップで支援することができます。コードの生成、最適化、リファクタリング、テストの作成など、さまざまなタスクを効率的に行うための提案を提供し、移行プロジェクトをスムーズに進めることができます。
 </details>
 
-### タスク3: COBOL の変換対象の言語
+### タスク3: Java 選択の理由
+
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilot Chatを開きます。
+
+
+
+### タスク4: COBOL の変換対象の言語
 
 1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilot Chatを開きます。
 
