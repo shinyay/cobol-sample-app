@@ -1,129 +1,129 @@
-# Legacy Code Modernization Workshop
+# レガシーコードモダナイゼーションワークショップ
 
-## Step 4: Create a Design Document
+## ステップ4: 設計ドキュメントを作成する
 
-### Task 1: Ask GitHub Copilot to create a design document template
+### タスク1: GitHub Copilotに設計ドキュメントテンプレートを作成させる
 
-1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilotチャットを開きます。
 
-2. Ask GitHub Copilot for the following:
+2. GitHub Copilotに以下を依頼します:
 
    ```plaintext
-   I would like to create a design document for our COBOL program. The design document should include the following sections, if possible:
-   - Introduction
-   - System Overview
-   - Functional Requirements
-   - Non-Functional Requirements
-   - System Architecture
-   - Data Model
-   - User Interface Design
-   - Error Handling and Logging
-   - Testing Strategy
-   - Deployment Plan
+   COBOLプログラムの設計ドキュメントを作成したいです。可能であれば、以下のセクションを含む設計ドキュメントを提供してください:
+   - はじめに
+   - システム概要
+   - 機能要件
+   - 非機能要件
+   - システムアーキテクチャ
+   - データモデル
+   - ユーザーインターフェース設計
+   - エラーハンドリングとログ
+   - テスト戦略
+   - デプロイメント計画
 
-   Please provide a template for this design document.
+   この設計ドキュメントのテンプレートを提供してください。
    ```
 
 <details>
-<summary>3. GitHub Copilot Sample Response</summary>
+<summary>3. GitHub Copilotのサンプル応答</summary>
 
-### Design Document Template for COBOL Program
+### COBOLプログラムの設計ドキュメントテンプレート
 
-#### 1. Introduction
-   - **Purpose**: Describe the purpose of the document and the system it covers.
-   - **Scope**: Define the scope of the system and what is included in the document.
-   - **Audience**: Identify the intended audience for the document.
+#### 1. はじめに
+   - **目的**: ドキュメントの目的と対象システムを説明します。
+   - **範囲**: システムの範囲とドキュメントに含まれる内容を定義します。
+   - **対象読者**: ドキュメントの対象読者を特定します。
 
-#### 2. System Overview
-   - **System Description**: Provide a high-level description of the system and its main functionalities.
-   - **Objectives**: Outline the main objectives and goals of the system.
+#### 2. システム概要
+   - **システム説明**: システムの高レベルな説明と主な機能を提供します。
+   - **目的**: システムの主な目的と目標を概説します。
 
-#### 3. Functional Requirements
-   - **Employee Data Initialization**: Describe the process of initializing employee data.
-   - **Sorting Employees**: Explain how employees are sorted by their IDs.
-   - **Net Salary Calculation**: Detail the calculation of net salaries, including bonuses, deductions, and tax deductions.
-   - **Department Totals Calculation**: Describe how total salaries for each department are calculated.
-   - **Displaying Information**: Explain how employee payroll information and department salary totals are displayed.
+#### 3. 機能要件
+   - **従業員データの初期化**: 従業員データの初期化プロセスを説明します。
+   - **従業員のソート**: 従業員をIDでソートする方法を説明します。
+   - **純給与の計算**: ボーナス、控除、税控除を含む純給与の計算方法を詳細に説明します。
+   - **部門ごとの合計計算**: 各部門の給与合計を計算する方法を説明します。
+   - **情報の表示**: 従業員の給与情報と部門ごとの給与合計を表示する方法を説明します。
 
-#### 4. Non-Functional Requirements
-   - **Performance**: Define performance requirements, such as response time and throughput.
-   - **Scalability**: Describe how the system can scale to handle increased load.
-   - **Maintainability**: Outline requirements for maintainability, including code readability and documentation.
-   - **Reliability**: Define reliability requirements, such as uptime and error rates.
+#### 4. 非機能要件
+   - **パフォーマンス**: 応答時間やスループットなどのパフォーマンス要件を定義します。
+   - **スケーラビリティ**: システムが増加する負荷に対応できる方法を説明します。
+   - **保守性**: コードの可読性やドキュメント化などの保守性要件を概説します。
+   - **信頼性**: 稼働時間やエラー率などの信頼性要件を定義します。
 
-#### 5. System Architecture
-   - **High-Level Architecture**: Provide a high-level diagram and description of the system architecture.
-   - **Components**: Describe the main components of the system and their interactions.
+#### 5. システムアーキテクチャ
+   - **高レベルアーキテクチャ**: システムアーキテクチャの高レベルな図と説明を提供します。
+   - **コンポーネント**: システムの主なコンポーネントとその相互作用を説明します。
 
-#### 6. Data Model
-   - **Data Structures**: Define the data structures used in the system, including employee and department tables.
-   - **Data Flow**: Describe how data flows through the system, from initialization to display.
+#### 6. データモデル
+   - **データ構造**: 従業員および部門テーブルを含むシステムで使用されるデータ構造を定義します。
+   - **データフロー**: 初期化から表示までのデータの流れを説明します。
 
-#### 7. User Interface Design
-   - **Console Output**: Describe the console output for displaying employee payroll information and department salary totals.
-   - **User Interaction**: Explain how users interact with the system, if applicable.
+#### 7. ユーザーインターフェース設計
+   - **コンソール出力**: 従業員の給与情報と部門ごとの給与合計を表示するコンソール出力を説明します。
+   - **ユーザーインタラクション**: ユーザーがシステムとどのように対話するかを説明します。
 
-#### 8. Error Handling and Logging
-   - **Error Handling**: Describe how errors are handled in the system, including input validation and exception handling.
-   - **Logging**: Outline the logging strategy for capturing system events and errors.
+#### 8. エラーハンドリングとログ
+   - **エラーハンドリング**: 入力検証や例外処理を含むシステムのエラーハンドリング方法を説明します。
+   - **ログ**: システムイベントやエラーをキャプチャするためのログ戦略を概説します。
 
-#### 9. Testing Strategy
-   - **Unit Testing**: Describe the approach for unit testing individual components.
-   - **Integration Testing**: Explain how integration testing will be performed to ensure components work together.
-   - **User Acceptance Testing**: Outline the process for user acceptance testing to validate the system with end-users.
+#### 9. テスト戦略
+   - **単体テスト**: 個々のコンポーネントの単体テストのアプローチを説明します。
+   - **統合テスト**: コンポーネントが連携して動作することを確認するための統合テストの方法を説明します。
+   - **ユーザー受け入れテスト**: エンドユーザーとともにシステムを検証するためのユーザー受け入れテストのプロセスを概説します。
 
-#### 10. Deployment Plan
-   - **Deployment Steps**: Provide a step-by-step plan for deploying the system.
-   - **Environment Setup**: Describe the environment setup required for deployment, including hardware and software requirements.
-   - **Rollback Plan**: Outline a rollback plan in case of deployment issues.
+#### 10. デプロイメント計画
+   - **デプロイメント手順**: システムをデプロイするためのステップバイステップの計画を提供します。
+   - **環境設定**: デプロイメントに必要なハードウェアおよびソフトウェア要件を含む環境設定を説明します。
+   - **ロールバック計画**: デプロイメントの問題が発生した場合のロールバック計画を概説します。
 
-This template provides a comprehensive structure for documenting the design of your COBOL program, ensuring that all key aspects are covered and clearly defined.
+このテンプレートは、COBOLプログラムの設計を文書化するための包括的な構造を提供し、すべての重要な側面がカバーされ、明確に定義されることを保証します。
 </details>
 
-### Task 2: Ask GitHub Copilot to create a design document
+### タスク2: GitHub Copilotに設計ドキュメントを作成させる
 
-1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilotチャットを開きます。
 
-2. Ask GitHub Copilot for the following:
+2. GitHub Copilotに以下を依頼します:
 
    ```plaintext
-   Based on the design doc template, plase make a desing doc of #file:main.cobc
+   設計ドキュメントテンプレートに基づいて、#file:main.cobc の設計ドキュメントを作成してください。
    ```
 
 <details>
-<summary>3. GitHub Copilot Sample Response</summary>
+<summary>3. GitHub Copilotのサンプル応答</summary>
 
-### Design Document for `main.cobc-1`
+### `main.cobc`の設計ドキュメント
 
-#### 1. Introduction
-   - **Purpose**: This document provides a detailed design for the COBOL payroll system, outlining its functionalities, architecture, and deployment plan.
-   - **Scope**: The document covers the initialization, sorting, calculation, and display of employee payroll information and department salary totals.
-   - **Audience**: This document is intended for developers, testers, and system administrators involved in the development and maintenance of the payroll system.
+#### 1. はじめに
+   - **目的**: このドキュメントは、COBOL給与システムの詳細な設計を提供し、その機能、アーキテクチャ、およびデプロイメント計画を概説します。
+   - **範囲**: このドキュメントは、従業員データの初期化、ソート、計算、および表示をカバーします。
+   - **対象読者**: このドキュメントは、給与システムの開発および保守に関与する開発者、テスター、およびシステム管理者を対象としています。
 
-#### 2. System Overview
-   - **System Description**: The payroll system initializes employee data, sorts employees, calculates net salaries, calculates department totals, and displays the results.
-   - **Objectives**: The main objectives are to automate payroll processing, ensure accurate salary calculations, and provide clear payroll information.
+#### 2. システム概要
+   - **システム説明**: 給与システムは、従業員データを初期化し、従業員をソートし、純給与を計算し、部門ごとの合計を計算し、結果を表示します。
+   - **目的**: 主な目的は、給与処理を自動化し、正確な給与計算を確保し、明確な給与情報を提供することです。
 
-#### 3. Functional Requirements
-   - **Employee Data Initialization**: Initialize employee data with hardcoded values.
-   - **Sorting Employees**: Sort employees by their IDs using a bubble sort algorithm.
-   - **Net Salary Calculation**: Calculate net salaries by computing bonuses, deductions, and tax deductions.
-   - **Department Totals Calculation**: Calculate total salaries for each department by aggregating net salaries.
-   - **Displaying Information**: Display employee payroll information and department salary totals on the console.
+#### 3. 機能要件
+   - **従業員データの初期化**: ハードコードされた値で従業員データを初期化します。
+   - **従業員のソート**: バブルソートアルゴリズムを使用して従業員をIDでソートします。
+   - **純給与の計算**: ボーナス、控除、および税控除を計算して純給与を計算します。
+   - **部門ごとの合計計算**: 純給与を集計して各部門の給与合計を計算します。
+   - **情報の表示**: コンソールに従業員の給与情報と部門ごとの給与合計を表示します。
 
-#### 4. Non-Functional Requirements
-   - **Performance**: The system should process payroll for up to 1000 employees within 5 seconds.
-   - **Scalability**: The system should be able to scale to handle additional employees and departments.
-   - **Maintainability**: The code should be well-documented and follow coding standards for readability and maintainability.
-   - **Reliability**: The system should have an uptime of 99.9% and handle errors gracefully.
+#### 4. 非機能要件
+   - **パフォーマンス**: システムは最大1000人の従業員の給与を5秒以内に処理する必要があります。
+   - **スケーラビリティ**: システムは、追加の従業員および部門に対応できるようにスケーラブルである必要があります。
+   - **保守性**: コードはよく文書化され、可読性と保守性のためにコーディング標準に従う必要があります。
+   - **信頼性**: システムは99.9％の稼働時間を持ち、エラーを適切に処理する必要があります。
 
-#### 5. System Architecture
-   - **High-Level Architecture**: The system consists of a main program that calls subroutines for initialization, sorting, calculation, and display.
-   - **Components**: The main components are the employee table, sorted employee table, department totals, and subroutines for each functionality.
+#### 5. システムアーキテクチャ
+   - **高レベルアーキテクチャ**: システムは、初期化、ソート、計算、および表示のサブルーチンを呼び出すメインプログラムで構成されています。
+   - **コンポーネント**: 主なコンポーネントは、従業員テーブル、ソートされた従業員テーブル、部門ごとの合計、および各機能のサブルーチンです。
 
-#### 6. Data Model
+#### 6. データモデル
 
-##### Data Structures
+##### データ構造
 - **EMPLOYEE-TABLE**
   - EMPLOYEE-ID: PIC X(5)
   - EMPLOYEE-NAME: PIC X(20)
@@ -148,7 +148,7 @@ This template provides a comprehensive structure for documenting the design of y
   - DEPT-NAME: PIC X(10)
   - TOTAL-SALARY: PIC 9(7)V99
 
-- **Indexes and Rates**
+- **インデックスとレート**
   - EMPLOYEE-INDEX: PIC 9(3)
   - INNER-INDEX: PIC 9(3)
   - TAX-RATE: PIC 9V99 VALUE 0.20
@@ -156,47 +156,47 @@ This template provides a comprehensive structure for documenting the design of y
   - DEDUCTION-RATE: PIC 9V99 VALUE 0.05
   - DEPARTMENT-INDEX: PIC 9(3)
 
-- **Temporary Variables**
+- **一時変数**
   - TEMP-ID: PIC X(5)
   - TEMP-NAME: PIC X(20)
   - TEMP-DEPARTMENT: PIC X(10)
   - TEMP-SALARY: PIC 9(7)V99
 
-- **Linkage Section Variables**
+- **リンクセクション変数**
   - LNK-GROSS-SALARY: PIC 9(7)V99
   - LNK-BONUS: PIC 9(5)V99
 
-##### Data Flow
-- **Initialization**: Employee data is initialized with hardcoded values.
-- **Sorting**: Employee data is sorted by ID and stored in the sorted employee table.
-- **Net Salary Calculation**: Net salaries are calculated using gross salary, bonus, deductions, and tax deductions.
-- **Department Totals Calculation**: Total salaries for each department are calculated by aggregating net salaries.
-- **Display**: Employee payroll information and department salary totals are displayed on the console.
+##### データフロー
+- **初期化**: 従業員データはハードコードされた値で初期化されます。
+- **ソート**: 従業員データはIDでソートされ、ソートされた従業員テーブルに格納されます。
+- **純給与の計算**: 純給与は、基本給与、ボーナス、控除、および税控除を使用して計算されます。
+- **部門ごとの合計計算**: 各部門の給与合計は、純給与を集計して計算されます。
+- **表示**: コンソールに従業員の給与情報と部門ごとの給与合計が表示されます。
 
-#### 7. User Interface Design
-   - **Console Output**: The system displays employee payroll information and department salary totals on the console.
-   - **User Interaction**: Users interact with the system by running the program and viewing the console output.
+#### 7. ユーザーインターフェース設計
+   - **コンソール出力**: システムは、コンソールに従業員の給与情報と部門ごとの給与合計を表示します。
+   - **ユーザーインタラクション**: ユーザーはプログラムを実行し、コンソール出力を表示することでシステムと対話します。
 
-#### 8. Error Handling and Logging
-   - **Error Handling**: The system validates input data and handles errors during processing.
-   - **Logging**: The system logs key events and errors to a log file for troubleshooting.
+#### 8. エラーハンドリングとログ
+   - **エラーハンドリング**: システムは入力データを検証し、処理中のエラーを処理します。
+   - **ログ**: システムは、トラブルシューティングのために主要なイベントとエラーをログファイルに記録します。
 
-#### 9. Testing Strategy
-   - **Unit Testing**: Each subroutine will be tested individually to ensure correct functionality.
-   - **Integration Testing**: The system will be tested as a whole to ensure all components work together.
-   - **User Acceptance Testing**: End-users will validate the system to ensure it meets their requirements.
+#### 9. テスト戦略
+   - **単体テスト**: 各サブルーチンは、正しい機能を確保するために個別にテストされます。
+   - **統合テスト**: システム全体がテストされ、すべてのコンポーネントが連携して動作することを確認します。
+   - **ユーザー受け入れテスト**: エンドユーザーがシステムを検証し、要件を満たしていることを確認します。
 
-#### 10. Deployment Plan
-   - **Deployment Steps**:
-     1. Compile the COBOL program.
-     2. Deploy the executable to the target environment.
-     3. Run initial tests to ensure the system is functioning correctly.
-   - **Environment Setup**: The target environment should have a COBOL compiler and runtime installed.
-   - **Rollback Plan**: In case of deployment issues, revert to the previous version of the system.
+#### 10. デプロイメント計画
+   - **デプロイメント手順**:
+     1. COBOLプログラムをコンパイルします。
+     2. 実行可能ファイルをターゲット環境にデプロイします。
+     3. システムが正しく機能していることを確認するために初期テストを実行します。
+   - **環境設定**: ターゲット環境には、COBOLコンパイラとランタイムがインストールされている必要があります。
+   - **ロールバック計画**: デプロイメントの問題が発生した場合、システムの以前のバージョンに戻します。
 
 ---
 
-This design document provides a comprehensive structure for documenting the design of your COBOL program, ensuring that all key aspects are covered and clearly defined.
+この設計ドキュメントは、COBOLプログラムの設計を文書化するための包括的な構造を提供し、すべての重要な側面がカバーされ、明確に定義されることを保証します。
 
 </details>
 
