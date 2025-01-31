@@ -129,6 +129,8 @@ COBOLプログラムの設計書を作成したいです。
 
 ![image](https://github.com/user-attachments/assets/db19d43c-936e-416c-907c-ef522d40bfd3)
 
+5. `designdoc-template.md` というファイル名を入力し、保存します。
+
 
 ### タスク2: GitHub Copilotに設計ドキュメントを作成させる
 
@@ -137,7 +139,7 @@ COBOLプログラムの設計書を作成したいです。
 2. GitHub Copilotに以下を依頼します:
 
    ```plaintext
-   設計ドキュメントテンプレートに基づいて、#file:main.cobc の設計ドキュメントを作成してください。
+   設計書テンプレート #file:designdoc-template.md に基づいて、 #file:main.cobc  の設計書を作成してください。
    ```
 
 <details>
