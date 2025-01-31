@@ -200,20 +200,20 @@
 
 </details>
 
-### Task 3: Ask GitHub Copilot to increase the readability of the code
+### タスク3: GitHub Copilotにコードの可読性を向上させるよう依頼する
 
-1. Open Copilot Chat with `Ctrl`+`Alt`+`I` or `Cmd`+`Alt`+`I`.
+1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilotチャットを開きます。
 
-2. Ask GitHub Copilot for the following:
+2. GitHub Copilotに以下を依頼します:
 
    ```plaintext
    I would like to increase the readability of #file:main.cobc . Please comment on the design details.
    ```
 
 <details>
-Sure, let's add comments to the COBOL code to increase its readability and explain the design details.
+<summary>3. GitHub Copilotのサンプル応答</summary>
 
-### COBOL Code with Comments
+### COBOLコードの可読性向上
 
 ```cobol
 IDENTIFICATION DIVISION.
@@ -222,10 +222,10 @@ IDENTIFICATION DIVISION.
        DATA DIVISION.
        WORKING-STORAGE SECTION.
 
-       * Define the maximum number of employees
+       * 従業員の最大数を定義
        01  MAX-EMPLOYEES           PIC 9(3) VALUE 5.
 
-       * Define the employee table with details for each employee
+       * 各従業員の詳細を含む従業員テーブルを定義
        01  EMPLOYEE-TABLE.
            05  EMPLOYEE-ENTRY OCCURS 5 TIMES.
                10  EMPLOYEE-ID        PIC X(5).
@@ -237,7 +237,7 @@ IDENTIFICATION DIVISION.
                10  NET-SALARY         PIC 9(7)V99.
                10  TAX-DEDUCTION      PIC 9(5)V99.
 
-       * Define the sorted employee table for storing sorted employee details
+       * ソートされた従業員の詳細を格納するためのソート済み従業員テーブルを定義
        01  SORTED-EMPLOYEE-TABLE.
            05  SORTED-EMPLOYEE-ENTRY OCCURS 5 TIMES.
                10  SORT-EMPLOYEE-ID   PIC X(5).
@@ -249,13 +249,13 @@ IDENTIFICATION DIVISION.
                10  SORT-NET-SALARY    PIC 9(7)V99.
                10  SORT-TAX-DEDUCTION PIC 9(5)V99.
 
-       * Define the department totals table for storing total salaries by department
+       * 部門ごとの総給与を格納するための部門合計テーブルを定義
        01  DEPARTMENT-TOTALS.
            05  DEPARTMENT-TOTAL OCCURS 5 TIMES.
                10  DEPT-NAME          PIC X(10).
                10  TOTAL-SALARY       PIC 9(7)V99.
 
-       * Define indexes and rates used in calculations
+       * 計算に使用されるインデックスとレートを定義
        01  EMPLOYEE-INDEX           PIC 9(3).
        01  INNER-INDEX              PIC 9(3).
        01  TAX-RATE                 PIC 9V99 VALUE 0.20.
@@ -263,19 +263,19 @@ IDENTIFICATION DIVISION.
        01  DEDUCTION-RATE           PIC 9V99 VALUE 0.05.
        01  DEPARTMENT-INDEX         PIC 9(3).
 
-       * Define temporary variables used during sorting
+       * ソート中に使用される一時変数を定義
        01  TEMP-ID                  PIC X(5).
        01  TEMP-NAME                PIC X(20).
        01  TEMP-DEPARTMENT          PIC X(10).
        01  TEMP-SALARY              PIC 9(7)V99.
 
-       * Define linkage section variables for calling external programs
+       * 外部プログラムを呼び出すためのリンクセクション変数を定義
        01  LNK-GROSS-SALARY         PIC 9(7)V99.
        01  LNK-BONUS                PIC 9(5)V99.
 
        PROCEDURE DIVISION.
 
-       * Main procedure to control the flow of the program
+       * プログラムのフローを制御するメイン手順
        MAIN-PROCEDURE.
            PERFORM INITIALIZE-EMPLOYEES.
            PERFORM SORT-EMPLOYEES.
@@ -285,7 +285,7 @@ IDENTIFICATION DIVISION.
            PERFORM DISPLAY-DEPARTMENT-TOTALS.
            STOP RUN.
 
-       * Subroutine to initialize employee data
+       * 従業員データを初期化するサブルーチン
        INITIALIZE-EMPLOYEES.
            MOVE "E001" TO EMPLOYEE-ID(1).
            MOVE "Alice Johnson" TO EMPLOYEE-NAME(1).
@@ -312,7 +312,7 @@ IDENTIFICATION DIVISION.
            MOVE "HR" TO DEPARTMENT(5).
            MOVE 75000.00 TO GROSS-SALARY(5).
 
-       * Subroutine to sort employees by ID using bubble sort
+       * バブルソートを使用して従業員をIDでソートするサブルーチン
        SORT-EMPLOYEES.
            PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
                MOVE EMPLOYEE-ID(EMPLOYEE-INDEX) TO SORT-EMPLOYEE-ID(EMPLOYEE-INDEX)
@@ -340,7 +340,7 @@ IDENTIFICATION DIVISION.
                END-PERFORM
            END-PERFORM.
 
-       * Subroutine to calculate net salaries for employees
+       * 従業員の純給与を計算するサブルーチン
        CALCULATE-NET-SALARIES.
            PERFORM VARYING EMPLOYEE-INDEX FROM 1 BY 1 UNTIL EMPLOYEE-INDEX > MAX-EMPLOYEES
                MOVE SORT-GROSS-SALARY(EMPLOYEE-INDEX) TO LNK-GROSS-SALARY
@@ -351,7 +351,7 @@ IDENTIFICATION DIVISION.
                COMPUTE SORT-NET-SALARY(EMPLOYEE-INDEX) = SORT-GROSS-SALARY(EMPLOYEE-INDEX) + SORT-BONUS(EMPLOYEE-INDEX) - SORT-TAX-DEDUCTION(EMPLOYEE-INDEX) - SORT-DEDUCTIONS(EMPLOYEE-INDEX)
            END-PERFORM.
 
-       * Subroutine to calculate total salaries for each department
+       * 各部門の総給与を計算するサブルーチン
        CALCULATE-DEPARTMENT-TOTALS.
            PERFORM VARYING DEPARTMENT-INDEX FROM 1 BY 1 UNTIL DEPARTMENT-INDEX > 5
                MOVE SPACES TO DEPT-NAME(DEPARTMENT-INDEX)
@@ -370,7 +370,7 @@ IDENTIFICATION DIVISION.
                END-PERFORM
            END-PERFORM.
 
-       * Subroutine to display employee payroll information
+       * 従業員の給与情報を表示するサブルーチン
        DISPLAY-EMPLOYEES.
            DISPLAY "Employee Payroll Information".
            DISPLAY "-----------------------------".
@@ -386,7 +386,7 @@ IDENTIFICATION DIVISION.
                DISPLAY "-----------------------------"
            END-PERFORM.
 
-       * Subroutine to display department salary totals
+       * 部門ごとの給与合計を表示するサブルーチン
        DISPLAY-DEPARTMENT-TOTALS.
            DISPLAY "Department Salary Totals".
            DISPLAY "-----------------------------".
@@ -399,14 +399,14 @@ IDENTIFICATION DIVISION.
            END-PERFORM.
 ```
 
-### Summary of Comments
-- **Data Division**: Comments explain the purpose of each data structure and variable.
-- **Procedure Division**: Comments describe the purpose and functionality of each subroutine.
-- **Main Procedure**: Comments outline the flow of the program, indicating the sequence of subroutine calls.
+### コメントの概要
+- **データ部門**: 各データ構造と変数の目的を説明するコメント。
+- **手続き部門**: 各サブルーチンの目的と機能を説明するコメント。
+- **メイン手順**: プログラムのフローを概説し、サブルーチン呼び出しの順序を示すコメント。
 
-These comments should help increase the readability of the COBOL code and provide a clear understanding of the design details.
+これらのコメントは、COBOLコードの可読性を高め、設計の詳細を明確に理解するのに役立ちます。
 
 </details>
 
-4. Click **Apply in Editor**
+4. **エディタに適用** をクリックします。
 ![Image](https://github.com/user-attachments/assets/6c1b88a8-92a4-4915-8357-91c2b9ee3631)
