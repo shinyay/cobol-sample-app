@@ -137,7 +137,7 @@ COBOLプログラムの設計書を作成したいです。
 2. GitHub Copilotに以下を依頼します:
 
    ```plaintext
-   設計ドキュメントテンプレートに基づいて、#file:main.cobc の設計ドキュメントを作成してください。
+   設計書テンプレート #file:designdoc-template.md に基づいて、 #file:main.cobc  の設計書を作成してください。
    ```
 
 <details>
