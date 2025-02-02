@@ -1,102 +1,142 @@
-### Design Document for `main.cobc`
+# COBOL Program Design Document
 
-#### 1. Introduction
-   - **Purpose**: This document provides a detailed design for the COBOL payroll system, outlining its functionalities, architecture, and deployment plan.
-   - **Scope**: The document covers the initialization, sorting, calculation, and display of employee payroll information and department salary totals.
-   - **Audience**: This document is intended for developers, testers, and system administrators involved in the development and maintenance of the payroll system.
+## はじめに
+- **目的**: このドキュメントは、`main.cobc` プログラムの設計を詳細に説明するためのものです。
+- **対象読者**: 開発者、プロジェクトマネージャー、テスター、運用担当者
+- **範囲**: プログラムの機能、非機能要件、システムアーキテクチャ、データモデル、ユーザーインターフェース設計、エラーハンドリング、テスト戦略、デプロイメント計画
 
-#### 2. System Overview
-   - **System Description**: The payroll system initializes employee data, sorts employees, calculates net salaries, calculates department totals, and displays the results.
-   - **Objectives**: The main objectives are to automate payroll processing, ensure accurate salary calculations, and provide clear payroll information.
+## システム概要
+- **システム名**: Payroll System
+- **システムの目的**: 従業員の給与計算を行い、各従業員の給与情報と部門ごとの給与合計を表示する。
+- **システムの概要**: 従業員の基本情報を初期化し、給与情報を計算して表示するバッチ処理プログラム。
+- **主要な機能**:
+  - 従業員情報の初期化
+  - 従業員情報のソート
+  - 従業員のネット給与計算
+  - 部門ごとの給与合計計算
+  - 従業員情報の表示
+  - 部門ごとの給与合計表示
 
-#### 3. Functional Requirements
-   - **Employee Data Initialization**: Initialize employee data with hardcoded values.
-   - **Sorting Employees**: Sort employees by their IDs using a bubble sort algorithm.
-   - **Net Salary Calculation**: Calculate net salaries by computing bonuses, deductions, and tax deductions.
-   - **Department Totals Calculation**: Calculate total salaries for each department by aggregating net salaries.
-   - **Displaying Information**: Display employee payroll information and department salary totals on the console.
+## 機能要件
+- **機能1: 従業員情報の初期化**
+  - 説明: 従業員の基本情報（ID、名前、部門、基本給）を初期化する。
+  - 入力: なし
+  - 出力: 初期化された従業員情報
 
-#### 4. Non-Functional Requirements
-   - **Performance**: The system should process payroll for up to 1000 employees within 5 seconds.
-   - **Scalability**: The system should be able to scale to handle additional employees and departments.
-   - **Maintainability**: The code should be well-documented and follow coding standards for readability and maintainability.
-   - **Reliability**: The system should have an uptime of 99.9% and handle errors gracefully.
+- **機能2: 従業員情報のソート**
+  - 説明: 従業員IDに基づいて従業員情報をソートする。
+  - 入力: 初期化された従業員情報
+  - 出力: ソートされた従業員情報
 
-#### 5. System Architecture
-   - **High-Level Architecture**: The system consists of a main program that calls subroutines for initialization, sorting, calculation, and display.
-   - **Components**: The main components are the employee table, sorted employee table, department totals, and subroutines for each functionality.
+- **機能3: 従業員のネット給与計算**
+  - 説明: 各従業員のネット給与を計算する。
+  - 入力: ソートされた従業員情報
+  - 出力: 計算されたネット給与
 
-#### 6. Data Model
+- **機能4: 部門ごとの給与合計計算**
+  - 説明: 各部門の給与合計を計算する。
+  - 入力: 計算されたネット給与
+  - 出力: 部門ごとの給与合計
 
-##### Data Structures
-- **EMPLOYEE-TABLE**
-  - EMPLOYEE-ID: PIC X(5)
-  - EMPLOYEE-NAME: PIC X(20)
-  - DEPARTMENT: PIC X(10)
-  - GROSS-SALARY: PIC 9(7)V99
-  - BONUS: PIC 9(5)V99
-  - DEDUCTIONS: PIC 9(5)V99
-  - NET-SALARY: PIC 9(7)V99
-  - TAX-DEDUCTION: PIC 9(5)V99
+- **機能5: 従業員情報の表示**
+  - 説明: 各従業員の給与情報を表示する。
+  - 入力: 計算されたネット給与
+  - 出力: 表示された従業員情報
 
-- **SORTED-EMPLOYEE-TABLE**
-  - SORT-EMPLOYEE-ID: PIC X(5)
-  - SORT-EMPLOYEE-NAME: PIC X(20)
-  - SORT-DEPARTMENT: PIC X(10)
-  - SORT-GROSS-SALARY: PIC 9(7)V99
-  - SORT-BONUS: PIC 9(5)V99
-  - SORT-DEDUCTIONS: PIC 9(5)V99
-  - SORT-NET-SALARY: PIC 9(7)V99
-  - SORT-TAX-DEDUCTION: PIC 9(5)V99
+- **機能6: 部門ごとの給与合計表示**
+  - 説明: 各部門の給与合計を表示する。
+  - 入力: 部門ごとの給与合計
+  - 出力: 表示された部門ごとの給与合計
 
-- **DEPARTMENT-TOTALS**
-  - DEPT-NAME: PIC X(10)
-  - TOTAL-SALARY: PIC 9(7)V99
+## 非機能要件
+- **パフォーマンス要件**: バッチ処理は1時間以内に完了すること。
+- **信頼性要件**: データの整合性を確保し、エラー発生時には適切にログを記録すること。
+- **可用性要件**: システムは24時間365日稼働すること。
+- **セキュリティ要件**: データは暗号化され、アクセス制御が適切に行われること。
+- **保守性要件**: コードはモジュール化され、変更が容易であること。
 
-- **Indexes and Rates**
-  - EMPLOYEE-INDEX: PIC 9(3)
-  - INNER-INDEX: PIC 9(3)
-  - TAX-RATE: PIC 9V99 VALUE 0.20
-  - BONUS-RATE: PIC 9V99 VALUE 0.10
-  - DEDUCTION-RATE: PIC 9V99 VALUE 0.05
-  - DEPARTMENT-INDEX: PIC 9(3)
+## システムアーキテクチャ
+- **アーキテクチャ概要**: バッチ処理プログラムとして設計されており、従業員情報の初期化、ソート、計算、表示を順次実行する。
+- **コンポーネント図**:
+  - PayrollSystem (メインプログラム)
+  - CalculateBonus (外部プログラム)
+- **データフロー図**:
+  - 従業員情報の初期化 -> 従業員情報のソート -> ネット給与計算 -> 部門ごとの給与合計計算 -> 従業員情報の表示 -> 部門ごとの給与合計表示
 
-- **Temporary Variables**
-  - TEMP-ID: PIC X(5)
-  - TEMP-NAME: PIC X(20)
-  - TEMP-DEPARTMENT: PIC X(10)
-  - TEMP-SALARY: PIC 9(7)V99
+## データモデル
+- **データベース設計**: なし（ファイルベースのデータ処理）
+- **データ項目定義**:
+  - EMPLOYEE-ID: X(5)
+  - EMPLOYEE-NAME: X(20)
+  - DEPARTMENT: X(10)
+  - GROSS-SALARY: 9(7)V99
+  - BONUS: 9(5)V99
+  - DEDUCTIONS: 9(5)V99
+  - NET-SALARY: 9(7)V99
+  - TAX-DEDUCTION: 9(5)V99
 
-- **Linkage Section Variables**
-  - LNK-GROSS-SALARY: PIC 9(7)V99
-  - LNK-BONUS: PIC 9(5)V99
+## ユーザーインターフェース設計
+- **画面設計**: なし（バッチ処理プログラムのため）
+- **操作フロー**: なし（バッチ処理プログラムのため）
 
-##### Data Flow
-- **Initialization**: Employee data is initialized with hardcoded values.
-- **Sorting**: Employee data is sorted by ID and stored in the sorted employee table.
-- **Net Salary Calculation**: Net salaries are calculated using gross salary, bonus, deductions, and tax deductions.
-- **Department Totals Calculation**: Total salaries for each department are calculated by aggregating net salaries.
-- **Display**: Employee payroll information and department salary totals are displayed on the console.
+## エラーハンドリングとログ
+- **エラーハンドリングポリシー**: エラー発生時にはエラーメッセージを表示し、ログに記録する。
+- **エラーメッセージ**:
+  - ファイル読み込みエラー
+  - データフォーマットエラー
+- **ログ出力**:
+  - ログの種類: エラーログ、処理ログ
+  - ログフォーマット: [タイムスタンプ] [ログレベル] [メッセージ]
 
-#### 7. User Interface Design
-   - **Console Output**: The system displays employee payroll information and department salary totals on the console.
-   - **User Interaction**: Users interact with the system by running the program and viewing the console output.
+## テスト戦略
+- **テスト計画**: 単体テスト、統合テスト、システムテストを実施する。
+- **テストケース**:
+  - テストケース1: 従業員情報の初期化
+    - 説明: 従業員情報が正しく初期化されることを確認する。
+    - 入力: なし
+    - 期待される出力: 初期化された従業員情報
+  - テストケース2: 従業員情報のソート
+    - 説明: 従業員情報が正しくソートされることを確認する。
+    - 入力: 初期化された従業員情報
+    - 期待される出力: ソートされた従業員情報
+- **テスト環境**: 開発環境、テスト環境、本番環境
 
-#### 8. Error Handling and Logging
-   - **Error Handling**: The system validates input data and handles errors during processing.
-   - **Logging**: The system logs key events and errors to a log file for troubleshooting.
+## デプロイメント計画
+- **デプロイメント手順**:
+  1. ソースコードのビルド
+  2. 実行ファイルのデプロイ
+  3. 環境設定ファイルの配置
+  4. バッチジョブのスケジューリング
+- **環境設定**:
+  - 環境変数の設定
+  - ファイルパスの設定
+- **リリース管理**:
+  - バージョン管理
+  - リリースノートの作成
 
-#### 9. Testing Strategy
-   - **Unit Testing**: Each subroutine will be tested individually to ensure correct functionality.
-   - **Integration Testing**: The system will be tested as a whole to ensure all components work together.
-   - **User Acceptance Testing**: End-users will validate the system to ensure it meets their requirements.
+## 追加項目（COBOLプログラム特有の項目）
+- **COBOLプログラム構造**:
+  - IDENTIFICATION DIVISION: プログラムの識別情報
+  - ENVIRONMENT DIVISION: 環境設定情報
+  - DATA DIVISION: データ定義
+  - PROCEDURE DIVISION: 処理手順
+- **COPYBOOKの使用**:
+  - 使用するCOPYBOOKの一覧: なし
+  - 各COPYBOOKの説明: なし
+- **外部プログラムとの連携**:
+  - 呼び出す外部プログラム: CalculateBonus
+  - 呼び出される外部プログラム: なし
+- **バッチ処理の設計**:
+  - バッチジョブのフロー: 従業員情報の初期化 -> 従業員情報のソート -> ネット給与計算 -> 部門ごとの給与合計計算 -> 従業員情報の表示 -> 部門ごとの給与合計表示
+  - スケジューリング: 毎日深夜に実行
 
-#### 10. Deployment Plan
-   - **Deployment Steps**:
-     1. Compile the COBOL program.
-     2. Deploy the executable to the target environment.
-     3. Run initial tests to ensure the system is functioning correctly.
-   - **Environment Setup**: The target environment should have a COBOL compiler and runtime installed.
-   - **Rollback Plan**: In case of deployment issues, revert to the previous version of the system.
-
----
+## まとめ
+- **今後の課題**:
+  - パフォーマンスの最適化
+  - 新しい機能の追加
+- **参考文献**:
+  - COBOL プログラミングガイド
+  - Java プログラミングガイド
+- **付録**:
+  - ソースコードリスト
+  - データフォーマット仕様
