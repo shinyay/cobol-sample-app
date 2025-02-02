@@ -265,7 +265,7 @@ COBOLプログラムの設計書を作成したいです。
 2. GitHub Copilotに以下を依頼します:
 
    ```plaintext
-   I would like to increase the readability of #file:main.cobc . Please comment on the design details.
+   設計書 #file:design-doc_main.md をもとに、 #file:main.cobc の可読性を向上させるようにコメントを挿入してください。
    ```
 
 <details>
