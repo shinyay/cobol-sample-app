@@ -252,6 +252,12 @@ COBOLプログラムの設計書を作成したいです。
 
 </details>
 
+4. `Insert into New File` をクリックします。
+
+![image](https://github.com/user-attachments/assets/db19d43c-936e-416c-907c-ef522d40bfd3)
+
+5. `designdoc-main.md` というファイル名を入力し、保存します。
+
 ### タスク3: GitHub Copilotにコードの可読性を向上させるよう依頼する
 
 1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` でCopilotチャットを開きます。
