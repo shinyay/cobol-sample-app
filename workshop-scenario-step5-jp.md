@@ -53,6 +53,12 @@ COBOLコードをJavaに再設計する際、結果のコードが保守可能�
 
 </details>
 
+4. `Insert into New File` をクリックします。
+
+![image](https://github.com/user-attachments/assets/db19d43c-936e-416c-907c-ef522d40bfd3)
+
+5. `java-conversion-criteria.md` というファイル名を入力し、保存します。
+
 ### タスク2: GitHub Copilotにクラス設計を定義させる
 
 1. `Ctrl`+`Alt`+`I` または `Cmd`+`Alt`+`I` を押してCopilot Chatを開きます。
