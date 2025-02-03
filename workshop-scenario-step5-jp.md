@@ -377,59 +377,59 @@ This detailed class design ensures that the `DepartmentTotal` class is robust, m
 </details>
 
 <details>
-<summary>4. GitHub Copilot Sample Response - PayrollSystem class</summary>
+<summary>4. GitHub Copilot サンプル回答 - `PayrollSystem` クラス</summary>
 
-### Detailed Class Design for `PayrollSystem` Class
+### `PayrollSystem` クラスの詳細なクラス設計
 
-Based on the design document and conversion criteria, here is the detailed class design for the `PayrollSystem` class in Java:
+設計ドキュメントと変換基準に基づいて、Javaの `PayrollSystem` クラスの詳細なクラス設計を以下に示します:
 
-#### 1. **Class Definition**
-   - **Class Name**: `PayrollSystem`
-   - **Purpose**: Manages the overall payroll system, including initializing employees, sorting employees, calculating net salaries, calculating department totals, and displaying information.
+#### 1. **クラス定義**
+   - **クラス名**: `PayrollSystem`
+   - **目的**: 従業員の初期化、従業員のソート、純給与の計算、部門の合計の計算、情報の表示など、給与システム全体を管理します。
 
-#### 2. **Attributes**
+#### 2. **属性**
    - **MAX_EMPLOYEES**: `static final int`
-     - Represents the maximum number of employees.
+     - 従業員の最大数を表します。
    - **TAX_RATE**: `static final double`
-     - Represents the tax rate.
+     - 税率を表します。
    - **BONUS_RATE**: `static final double`
-     - Represents the bonus rate.
+     - ボーナス率を表します。
    - **DEDUCTION_RATE**: `static final double`
-     - Represents the deduction rate.
+     - 控除率を表します。
    - **employees**: `List<Employee>`
-     - Represents the list of employees.
+     - 従業員のリストを表します。
    - **departmentTotals**: `List<DepartmentTotal>`
-     - Represents the list of department totals.
+     - 部門の合計のリストを表します。
 
-#### 3. **Methods**
+#### 3. **メソッド**
    - **initializeEmployees()**
-     - Initializes the employee data with hardcoded values.
+     - ハードコードされた値で従業員データを初期化します。
    - **sortEmployees()**
-     - Sorts the employees by their IDs.
+     - 従業員をIDでソートします。
    - **calculateNetSalaries()**
-     - Calculates the net salaries for all employees.
+     - すべての従業員の純給与を計算します。
    - **calculateDepartmentTotals()**
-     - Calculates the total salaries for each department.
+     - 各部門の総給与を計算します。
    - **displayEmployees()**
-     - Displays the employee payroll information.
+     - 従業員の給与情報を表示します。
    - **displayDepartmentTotals()**
-     - Displays the department salary totals.
+     - 部門の給与合計を表示します。
    - **main(String[] args)**
-     - The main method to run the payroll system.
+     - 給与システムを実行するためのメインメソッド。
 
-#### 4. **Encapsulation**
-   - All attributes are private to ensure encapsulation.
-   - Public methods are provided to perform various operations on the payroll system.
+#### 4. **カプセル化**
+   - すべての属性はカプセル化を確保するためにプライベートです。
+   - 給与システムでさまざまな操作を実行するためのパブリックなメソッドが提供されます。
 
-#### 5. **Maintainability**
-   - The class is designed to be clear and readable with meaningful method names.
-   - Documentation and comments are provided to explain the purpose and usage of the class and its methods.
+#### 5. **保守性**
+   - クラスは明確で読みやすく、意味のあるメソッド名を持つように設計されています。
+   - クラスとそのメソッドの目的と使用方法を説明するドキュメントとコメントが提供されます。
 
-#### 6. **Testability**
-   - The class is designed to be easily testable with unit tests.
-   - Methods can be tested individually to ensure correct functionality.
+#### 6. **テスト可能性**
+   - クラスはユニットテストで簡単にテストできるように設計されています。
+   - メソッドは個別にテストして正しい機能を確認できます。
 
-### Java Code for `PayrollSystem` Class
+### `PayrollSystem` クラスのJavaコード
 
 ```java
 import java.util.ArrayList;
@@ -438,22 +438,21 @@ import java.util.Comparator;
 import java.util.List;
 
 /**
- * Manages the overall payroll system, including initializing employees, sorting employees, calculating net salaries,
- * calculating department totals, and displaying information.
+ * 従業員の初期化、従業員のソート、純給与の計算、部門の合計の計算、情報の表示など、給与システム全体を管理します。
  */
 public class PayrollSystem {
-    // Constants
+    // 定数
     private static final int MAX_EMPLOYEES = 5;
     private static final double TAX_RATE = 0.20;
     private static final double BONUS_RATE = 0.10;
     private static final double DEDUCTION_RATE = 0.05;
 
-    // Attributes
+    // 属性
     private List<Employee> employees = new ArrayList<>();
     private List<DepartmentTotal> departmentTotals = new ArrayList<>();
 
     /**
-     * Initializes the employee data with hardcoded values.
+     * ハードコードされた値で従業員データを初期化します。
      */
     public void initializeEmployees() {
         employees.add(new Employee("E001", "Alice Johnson", "HR", 70000.00));
@@ -464,14 +463,14 @@ public class PayrollSystem {
     }
 
     /**
-     * Sorts the employees by their IDs.
+     * 従業員をIDでソートします。
      */
     public void sortEmployees() {
         Collections.sort(employees, Comparator.comparing(Employee::getId));
     }
 
     /**
-     * Calculates the net salaries for all employees.
+     * すべての従業員の純給与を計算します。
      */
     public void calculateNetSalaries() {
         BonusCalculator bonusCalculator = new BonusCalculator();
@@ -489,7 +488,7 @@ public class PayrollSystem {
     }
 
     /**
-     * Calculates the total salaries for each department.
+     * 各部門の総給与を計算します。
      */
     public void calculateDepartmentTotals() {
         for (Employee employee : employees) {
@@ -507,7 +506,7 @@ public class PayrollSystem {
     }
 
     /**
-     * Displays the employee payroll information.
+     * 従業員の給与情報を表示します。
      */
     public void displayEmployees() {
         System.out.println("Employee Payroll Information");
@@ -526,7 +525,7 @@ public class PayrollSystem {
     }
 
     /**
-     * Displays the department salary totals.
+     * 部門の給与合計を表示します。
      */
     public void displayDepartmentTotals() {
         System.out.println("Department Salary Totals");
@@ -539,9 +538,9 @@ public class PayrollSystem {
     }
 
     /**
-     * The main method to run the payroll system.
+     * 給与システムを実行するためのメインメソッド。
      *
-     * @param args command-line arguments
+     * @param args コマンドライン引数
      */
     public static void main(String[] args) {
         PayrollSystem payrollSystem = new PayrollSystem();
@@ -555,64 +554,64 @@ public class PayrollSystem {
 }
 ```
 
-### Summary
-- **Encapsulation**: All attributes are private, and public methods are provided to perform various operations.
-- **Single Responsibility Principle**: The class focuses solely on managing the payroll system.
-- **Maintainability**: The class is clear, readable, and well-documented.
-- **Testability**: The class is designed to be easily testable with unit tests.
+### まとめ
+- **カプセル化**: すべての属性はプライベートであり、パブリックなメソッドが提供されます。
+- **単一責任の原則**: クラスは給与システムの管理にのみ焦点を当てています。
+- **保守性**: クラスは明確で読みやすく、よく文書化されています。
+- **テスト可能性**: クラスはユニットテストで簡単にテストできるように設計されています。
 
-This detailed class design ensures that the `PayrollSystem` class is robust, maintainable, and leverages the object-oriented features of Java.
+この詳細なクラス設計により、`PayrollSystem` クラスが堅牢で保守可能であり、Javaのオブジェクト指向機能を活用できることが保証されます。
 
 </details>
 
 <details>
-<summary>5. GitHub Copilot Sample Response - BonusCalculator class</summary>
+<summary>5. GitHub Copilot サンプル回答 - BonusCalculator クラス</summary>
 
-### Detailed Class Design for `BonusCalculator` Class
+### `BonusCalculator` クラスの詳細なクラス設計
 
-Based on the design document and conversion criteria, here is the detailed class design for the `BonusCalculator` class in Java:
+設計ドキュメントと変換基準に基づいて、Javaの `BonusCalculator` クラスの詳細なクラス設計を以下に示します:
 
-#### 1. **Class Definition**
-   - **Class Name**: `BonusCalculator`
-   - **Purpose**: Encapsulates the logic for calculating bonuses based on gross salary.
+#### 1. **クラス定義**
+   - **クラス名**: `BonusCalculator`
+   - **目的**: 総給与に基づいてボーナスを計算するロジックをカプセル化します。
 
-#### 2. **Attributes**
+#### 2. **属性**
    - **BONUS_RATE**: `static final double`
-     - Represents the bonus rate used for calculating bonuses.
+     - ボーナスを計算するために使用されるボーナス率を表します。
 
-#### 3. **Methods**
+#### 3. **メソッド**
    - **calculateBonus(double grossSalary)**
-     - Calculates the bonus based on the given gross salary.
-     - **Parameters**: `grossSalary` (double) - The gross salary of the employee.
-     - **Returns**: `double` - The calculated bonus.
+     - 指定された総給与に基づいてボーナスを計算します。
+     - **パラメータ**: `grossSalary` (double) - 従業員の総給与。
+     - **戻り値**: `double` - 計算されたボーナス。
 
-#### 4. **Encapsulation**
-   - The bonus rate is a private constant to ensure encapsulation.
-   - The method `calculateBonus` is public to allow access to the bonus calculation logic.
+#### 4. **カプセル化**
+   - ボーナス率はカプセル化を確保するためにプライベートな定数です。
+   - `calculateBonus` メソッドはボーナス計算ロジックにアクセスするためにパブリックです。
 
-#### 5. **Maintainability**
-   - The class is designed to be clear and readable with meaningful method names.
-   - Documentation and comments are provided to explain the purpose and usage of the class and its methods.
+#### 5. **保守性**
+   - クラスは明確で読みやすく、意味のあるメソッド名を持つように設計されています。
+   - クラスとそのメソッドの目的と使用方法を説明するドキュメントとコメントが提供されます。
 
-#### 6. **Testability**
-   - The class is designed to be easily testable with unit tests.
-   - The `calculateBonus` method can be tested individually to ensure correct functionality.
+#### 6. **テスト可能性**
+   - クラスはユニットテストで簡単にテストできるように設計されています。
+   - `calculateBonus` メソッドは個別にテストして正しい機能を確認できます。
 
-### Java Code for `BonusCalculator` Class
+### `BonusCalculator` クラスのJavaコード
 
 ```java
 /**
- * Encapsulates the logic for calculating bonuses based on gross salary.
+ * 総給与に基づいてボーナスを計算するロジックをカプセル化します。
  */
 public class BonusCalculator {
-    // Constants
+    // 定数
     private static final double BONUS_RATE = 0.10;
 
     /**
-     * Calculates the bonus based on the given gross salary.
+     * 指定された総給与に基づいてボーナスを計算します。
      *
-     * @param grossSalary the gross salary of the employee
-     * @return the calculated bonus
+     * @param grossSalary 従業員の総給与
+     * @return 計算されたボーナス
      */
     public double calculateBonus(double grossSalary) {
         return grossSalary * BONUS_RATE;
@@ -620,11 +619,12 @@ public class BonusCalculator {
 }
 ```
 
-### Summary
-- **Encapsulation**: The bonus rate is a private constant, and the `calculateBonus` method is public.
-- **Single Responsibility Principle**: The class focuses solely on calculating bonuses.
-- **Maintainability**: The class is clear, readable, and well-documented.
-- **Testability**: The class is designed to be easily testable with unit tests.
+### まとめ
+- **カプセル化**: ボーナス率はプライベートな定数であり、`calculateBonus` メソッドはパブリックです。
+- **単一責任の原則**: クラスはボーナスの計算にのみ焦点を当てています。
+- **保守性**: クラスは明確で読みやすく、よく文書化されています。
+- **テスト可能性**: クラスはユニットテストで簡単にテストできるように設計されています。
 
-This detailed class design ensures that the `BonusCalculator` class is robust, maintainable, and leverages the object-oriented features of Java.
+この詳細なクラス設計により、`BonusCalculator` クラスが堅牢で保守可能であり、Javaのオブジェクト指向機能を活用できることが保証されます。
+
 </details>
