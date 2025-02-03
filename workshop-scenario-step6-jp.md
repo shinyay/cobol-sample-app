@@ -1,48 +1,48 @@
-# Legacy Code Modernization Workshop
+# レガシーコードモダナイゼーションワークショップ
 
-## Step 6: Generate Design Doc to Java
+## ステップ 6: 設計ドキュメントからJavaコードを生成する
 
-Based on the design doc, ask GitHub Copilot to generate the Java code.
+設計ドキュメントに基づいて、GitHub CopilotにJavaコードを生成するよう依頼します。
 
-### Task 1: Generate the Java code for `Employee` class
+### タスク 1: `Employee` クラスのJavaコードを生成する
 
-1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. `Ctrl`+`Shift`+`I` または `Cmd`+`Shift`+`I` を使用してCopilot Editを開きます。
 
-2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+2. `main.cobc` と `calculate_bonus.cobc` を使用して、GitHub Copilotに次のように依頼します:
 
    ```plaintext
-   Based on design doc #file:employee-class.md, please propose Employee class as Java under java directory.
+   設計ドキュメント #file:employee-class.md に基づいて、javaディレクトリにEmployeeクラスを提案してください。
    ```
 
-3. Click `Accept` after you check the code.
+3. コードを確認した後、`Accept`をクリックします。
 ![Image](https://github.com/user-attachments/assets/58fb683c-60b8-4d17-9e95-1cf3fe0f4f14)
 
-### (Option) Task 2: Generate the Java code for `DepartmentTotal` class
+### （オプション）タスク 2: `DepartmentTotal` クラスのJavaコードを生成する
 
-1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. `Ctrl`+`Shift`+`I` または `Cmd`+`Shift`+`I` を使用してCopilot Editを開きます。
 
-2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+2. `main.cobc` と `calculate_bonus.cobc` を使用して、GitHub Copilotに次のように依頼します:
 
    ```plaintext
-   Based on design doc #file:departmenttotal-class.md, please propose DepartmentTotal class as Java under java directory.
+   設計ドキュメント #file:departmenttotal-class.md に基づいて、javaディレクトリにDepartmentTotalクラスを提案してください。
    ```
 
-### (Option) Task 3: Generate the Java code for `PayrollSystem` class
+### （オプション）タスク 3: `PayrollSystem` クラスのJavaコードを生成する
 
-1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. `Ctrl`+`Shift`+`I` または `Cmd`+`Shift`+`I` を使用してCopilot Editを開きます。
 
-2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+2. `main.cobc` と `calculate_bonus.cobc` を使用して、GitHub Copilotに次のように依頼します:
 
    ```plaintext
-   Based on design doc #file:payrollsystem-class.md , please propose PayrollSystem class as Java under java directory.
+   設計ドキュメント #file:payrollsystem-class.md に基づいて、javaディレクトリにPayrollSystemクラスを提案してください。
    ```
 
-### (Option) Task 4: Generate the Java code for `BonusCalculator` class
+### （オプション）タスク 4: `BonusCalculator` クラスのJavaコードを生成する
 
-1. Open Copilot Edit with `Ctrl`+`Shift`+`I` or `Cmd`+`Shift`+`I`.
+1. `Ctrl`+`Shift`+`I` または `Cmd`+`Shift`+`I` を使用してCopilot Editを開きます。
 
-2. Ask GitHub Copilot for the following with `main.cobc` and `calculate_bonus.cobc`:
+2. `main.cobc` と `calculate_bonus.cobc` を使用して、GitHub Copilotに次のように依頼します:
 
    ```plaintext
-   Based on design doc #file:bonuscalculator-class.md , please propose BonusCalculator class as Java under java directory.
+   設計ドキュメント #file:bonuscalculator-class.md に基づいて、javaディレクトリにBonusCalculatorクラスを提案してください。
    ```
