@@ -284,6 +284,12 @@ public class Employee {
 
 </details>
 
+4. `Insert into New File` をクリックします。
+
+![image](https://github.com/user-attachments/assets/db19d43c-936e-416c-907c-ef522d40bfd3)
+
+5. `employee-class.md` というファイル名を入力し、保存します。
+
 ### (オプション) タスク4: COBOLプログラムに基づくJavaクラスの詳細設計
 
 `Employee`クラス以外の詳細なクラス設計を行います。
